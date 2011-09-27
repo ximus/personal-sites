@@ -1,0 +1,73 @@
+main:
+  -
+    title: Web Design
+    client_name: Love the World
+    client_url: http://www.lovetheworld.com/
+    contact_with: Head of communication
+    description: Implemented a CO<sub>2</sub> module to enable visitors to measure their country's CO<sub>2</sub> footprint
+    tools: "HTML/CSS, Javascript, RaphaelJS (SVG framework)"
+    started_in: 05/2011
+    finished_in: 06/2011
+  -
+    title: Web Application Design
+    client_name: MD Architecture
+    contact_with: CEO
+    description: Designed and implemented a muti-user online file sharing platform for the construction of a large High School. The platform includes complex authorization and roles model, and basic email sharing capabilities.
+    tools: "HTML/CSS, Ruby on Rails"
+    started_in: 05/2010
+    finished_in: 07/2010
+  -
+    title: Web Application Design
+    client_name: Modenature (construction)
+    client_url: http://www.modenature.pro/
+    contact_with: CEO
+    description: "A major learning experience. Built a collaborative web application to enable the sales team to work (much) more efficiently. Reception by users was great."
+    tools: "Adobe Air, Flex (Actionscript framework), Ruby"
+    started_in: 07/2009
+    finished_in: 11/2009 
+  -
+    title: Visual Design
+    client_name: Qualinetwork
+    client_url: http://www.qualinetwork.com/
+    contact_with: Founder and CEO
+    description: "Designed and implemented a visual graph to visulize customer feedback for products sold through e-commerce"
+    tools: "HTML/CSS, Actionscript"
+    started_in: 05/2011
+    finished_in: 06/2011
+  -
+    title: Web Design
+    client_name: Scalr
+    client_url: http://wwww.scalr.net/
+    contact_with: Founder and CEO
+    description: "Participated in the branding thought process, recorded some screencasts, designed the web site. Gave me a strong understanding of cloud computing"
+    tools: "HTML/CSS, Illustrator, Photoshop, Mindtouch (wiki platform), Camtasia Studio (screencast recording)"
+    date: 2009
+  -
+    title: Web Marketing
+    client_name: Bazile Telecom
+    client_url: http://www.bazile.fr/
+    contact_with: CEO, Marketing Manager 
+    description: Designed and implemented an small interactive client-side app so people could better understand the client's product.
+    tools: "HTML/CSS, Actionscript, Illustrator, Photoshop"
+    date: 2008
+  -
+    title: Intern
+    client_name: NuGraphic
+    contact_with: CEO
+    description: My stepping stone into the web. Learned the basics of the web from some of the best (now working for Zynga). Participated in web design, branding, web strategy and e-commerce works.
+    tools: "HTML/CSS, Javascript, PHP, Illustrator, Photoshop"
+    started_in: 09/2007
+    finished_in: 01/2008
+various_sites:
+  - 
+    url: forgedemontolieu.com
+    description: "Bed & Breakfast in the south of France"
+  - 
+    url: lalettrevolee.fr
+    description: "Local bookshop"
+  - 
+    url: francoisecullet.com
+    description: "Artist in the south of France, earlier work"
+  - 
+    url: oliviadegasquet.com
+    description: "Another Artist, earlier work"

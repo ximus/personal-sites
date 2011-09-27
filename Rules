@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+require 'compass' 
+
+# Need this for Compass to work
+Compass.add_project_configuration 'compass/config.rb'
+Sass::Engine::DEFAULT_OPTIONS = Sass::Engine::DEFAULT_OPTIONS.dup.merge(Compass.sass_engine_options)
+
+compile '/stylesheets/main/' do
+  filter :sprockets
+end
+
+compile '/javascripts/main/' do
+  filter :sprockets
+end
+
+compile '/javascripts/*/' do
+end    
+
+compile '*' do
+  if !item.binary?
+    filter :erubis
+    layout 'default'
+  end
+end
+
+route '/stylesheets/main/' do                                                             
+  '/stylesheets/main.css'
+end
+
+route '/javascripts/*' do
+  if !item.binary?
+    item.identifier.chop + '.js'
+  end  
+end
+
+# Just copy the rest over
+route '*' do
+  if item[:content_filename]
+    item[:content_filename].gsub(/^content/, '')
+  end
+end
+
+layout '*', :erb

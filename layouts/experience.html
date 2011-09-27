@@ -1,0 +1,26 @@
+<li class="past-project">
+  <hgroup>
+    <h3><%= @title %></h3>
+    <h4><%= @client_url ? link_to(@client_name, @client_url, :target => "_blank") : @client_name %></h4>
+  </hgroup>
+  
+  <p class="period">
+    <%= @date || "#{@started_in} -  #{@finished_in}" %>
+  </p>
+  
+  <% if @contact_with %>
+    <p class="contact">
+      <span class="label">contact:</span> <%= @contact_with %>
+    </p>
+  <% end %>                            
+  
+  <% if @tools %>
+    <p class="tools">
+      <span class="label">tools:</span> <%= @tools %>
+    </p>
+  <% end %>
+  
+  <p class="description">
+    <%= @description %>
+  </p>
+</li>
