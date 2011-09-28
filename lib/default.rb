@@ -12,11 +12,11 @@ module Helpers
   end
   
   def experience_list 
-    item_with_identifier("/experience/")[:main]
+    item_with_identifier("/resume/experience/")[:main]
   end
   
   def various_sites_list 
-    item_with_identifier("/experience/")[:various_sites]
+    item_with_identifier("/resume/experience/")[:various_sites]
   end
 end
 

@@ -32,7 +32,7 @@ class SprocketWheel < Nanoc3::Filter
     asset = env.find_asset(filename)
     
     # Make sure sure the item is recompiled if a depended asset is dirty!
-    # Gather dependent items,
+    # Gather dependent items
     item_dependencies = asset.dependencies.collect do |asset_dep|
       # Find its corresponding Nanoc item.
       imported_filename_to_item(asset_dep.pathname)

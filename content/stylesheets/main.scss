@@ -209,6 +209,7 @@ td { vertical-align: top; }
 
 $blueprint-grid-width: 23px;
 $blueprint-grid-margin: 7px;
+
 $alternating-color: #f6f4ec; 
 
 $stronger-text-color: #2e2e2e;
@@ -219,6 +220,7 @@ $lighter-text-color: #7b7b7b;
 @import "compass/css3/border-radius"; 
 @import "compass/css3/box-shadow";
 @import "compass/css3/transition";
+@import "compass/css3/opacity";
 
 body {
 	color: $normal-text-color;
@@ -267,14 +269,14 @@ section > section:last-child { margin-bottom: 0; }
 	h3 { color: $lighter-text-color; }
 	li { padding-bottom: 2px; }
 	ul {
-		opacity: 0.6;
+		@include opacity(0.6);
 		@include single-transition(opacity, 100ms, ease); }          
 	@include border-radius(5px);
 	@include single-box-shadow(#8d8d8d, 0, 0, 8px); }
 
 #nav:hover, #nav.showing {
 	left: -3px;
-	ul { opacity: 1; } }
+	ul { @include opacity(1); } }
 
 #container {
 	@include container;
@@ -322,9 +324,7 @@ section > h2 {
 		margin-top: 18px;	} }
 
 #profile {
-	p {
-		// @include column(18, true);
-		text-align: justify; } }
+	p {	text-align: justify; } }
 	
 #skills,
 #profile,
@@ -429,7 +429,7 @@ footer {
 	p {
 		text-align: center; 
 		color: $lighter-text-color;
-		opacity: 0.9; 
+		@include opacity(0.9); 
 		clear: both;
 	}
 }
