@@ -1,5 +1,13 @@
 main:
   -
+    title: Mobile Web App Design
+    client_name: Blurt
+    client_url: http://www.blurt.net/
+    contact_with: Founder
+    description: "Created a consumer oriented mobile app for mobile commerce. Used the latest techniques in CSS3 animation and touch functionality. Having to deal with the constraints of mobile devices." 
+    tools: "HTML/CSS, Javascript, Coffeescript, SASS"
+    date: 2011
+  -
     title: Web Design
     client_name: Love the World
     client_url: http://www.lovetheworld.com/
