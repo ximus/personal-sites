@@ -14,7 +14,10 @@ compile '/javascripts/main/' do
 end
 
 compile '/javascripts/*/' do
-end    
+end 
+
+compile '/robots/' do
+end   
 
 compile '*' do
   if !item.binary?
