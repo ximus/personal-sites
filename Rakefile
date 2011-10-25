@@ -1,6 +1,12 @@
 require 'nanoc3/tasks'
 
-task :deploy => ['optimize:all', 'deploy:rsync']
+task :deploy => [
+  'compile:pdf_resume',
+  'optimize:jpeg',
+  'optimize:png',
+  'optimize:css',
+  'optimize:js', 
+  'deploy:rsync']
 
 namespace :optimize do
   desc 'Optimise JPEG images in output/images directory using jpegoptim'
@@ -34,7 +40,14 @@ namespace :optimize do
   end
 
   desc 'Optimise all image, CSS, JavaScript, HTML and XML files in the output directory'
-  task :all => [:jpeg, :png, :css, :js]
+  task :all => [:jpeg, :png, :css, :js, :html, :xml]
+end
+
+namespace :compile do
+  desc "Generates the pdf version of my resume"
+  task :pdf_resume do
+    puts `wkpdf -t 10000 --stylesheet-media print  -n --caching false -m 52  --source output/resume/index.html --output output/resume/maxime-liron-resume.pdf`
+  end
 end
 
 namespace :beautify do

@@ -234,6 +234,9 @@ a:visited {
 	color: $normal-text-color; }
 
 a:hover { text-decoration: underline; }
+a[href*="pdf"].with-icon {
+	background: url(../images/pdf-icon.gif) no-repeat 0 50%;
+	padding-left: 20px; }
 
 ul { padding-left: 1.4em; }
 ul ul { margin-top: 0.7em; }
@@ -256,27 +259,28 @@ h2 > a.top {
 section { margin-bottom: 28px; }
 section > section:last-child { margin-bottom: 0; }
 
-#nav {
+#toc {
 	display: none;
 	position: fixed;
 	width: 95px;
 	z-index: 20;
 	left: -112px;
 	top: 60px;
-	padding: 22px 26px; 
+	padding: 22px 26px 43px 26px; 
 	background: white url(../images/toc.png) no-repeat 100% 100%;
 	@include single-transition(left, 100ms, ease);
 	h3 { color: $lighter-text-color; }
 	li { padding-bottom: 2px; }
-	ul {
+	a, h2 {
 		@include opacity(0.6);
 		@include single-transition(opacity, 100ms, ease); }          
 	@include border-radius(5px);
-	@include single-box-shadow(#8d8d8d, 0, 0, 8px); }
+	@include single-box-shadow(#8d8d8d, 0, 0, 8px);
+	nav { margin-bottom: 18px; } }
 
-#nav:hover, #nav.showing {
+#toc:hover, #toc.showing {
 	left: -3px;
-	ul { @include opacity(1); } }
+	a, h2 { @include opacity(1); } }
 
 #container {
 	@include container;
@@ -444,11 +448,11 @@ footer {
 @media only screen and (min-width: 480px) { }
 
 @media only screen and (min-width: 768px) {
-	#nav { display: block; } 
+	#toc { display: block; } 
 }
 
 @media only screen and (min-width: 1180px) {
- 	#nav { left: -3px; }
+ 	#toc { left: -3px; }
 }
 
 
@@ -486,21 +490,32 @@ footer {
    ========================================================================== */
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
+  *:not(.star) { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a[href]:after {
+		font-size: 87%;
+		content: " (" attr(href) ")"; }
+	a, a:visited { text-decoration: none; }
   abbr[title]:after { content: " (" attr(title) ")"; }
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; } /* h5bp.com/t */
   tr, img { page-break-inside: avoid; }
+	ul, section { page-break-inside: avoid; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; } 
-
+  h1, h2, h3, h4 { page-break-after: avoid; }
+	// This is not working (webkit)
+	#projects {
+		page-break-before: always;
+		page-break-inside: avoid; }
 	h2 > a.top { display: none; }
-	#contact .email a:after { content: ''; } 
+	#container {
+		margin-top:  0;
+		padding-top: 0;	}
+	#contact,
+	#skills {
+		a:after { content: ''; } }  
 	footer { display: none; }
-	#nav { display: none; }
+	#toc { display: none; }
 }

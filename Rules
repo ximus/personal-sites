@@ -7,6 +7,7 @@ Sass::Engine::DEFAULT_OPTIONS = Sass::Engine::DEFAULT_OPTIONS.dup.merge(Compass.
 
 compile '/stylesheets/main/' do
   filter :sprockets
+  filter :relativize_paths, :type => :css
 end
 
 compile '/javascripts/main/' do
@@ -23,6 +24,9 @@ compile '*' do
   if !item.binary?
     filter :erubis
     layout 'default'
+    if item[:extension] == 'html'
+      filter :relativize_paths, :type => :html 
+    end
   end
 end
 
