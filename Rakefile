@@ -46,7 +46,7 @@ end
 namespace :compile do
   desc "Generates the pdf version of my resume"
   task :pdf_resume do
-    puts `wkpdf -t 10000 --stylesheet-media print  -n --caching false -m 52  --source output/resume/index.html --output output/resume/maxime-liron-resume.pdf`
+    puts `rvm system exec wkpdf -t 10000 --stylesheet-media print  -n --caching false -m 52  --source output/resume/index.html --output output/resume/maxime-liron-resume.pdf`
   end
 end
 
