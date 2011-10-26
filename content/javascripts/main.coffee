@@ -31,14 +31,14 @@ $.fn.star = ->
 
 $(document).ready ->
   $('#skills .starme span').star()
-  $("#nav li a").add('h2 > a.top').click (e) ->	
+  $("#toc li a").add('h2 > a.top').click (e) ->	
   	e.preventDefault()
   	e.stopPropagation()
-  	$('#nav').removeClass('showing')   
+  	$('#toc').removeClass('showing')   
   	offset = if $(this.hash).offset() then $(this.hash).offset().top else 0
   	$('html,body').animate({scrollTop:offset }, 500, 'swing')
   	
-  $('#nav').bind 'touchend', (e) ->
+  $('#toc').bind 'touchend', (e) ->
     $(this).toggleClass('showing')
     
   # Other skills spread accross columns
