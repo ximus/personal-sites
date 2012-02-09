@@ -435,6 +435,7 @@ footer {
 		color: $lighter-text-color;
 		@include opacity(0.9); 
 		clear: both;
+		margin: .6em 0;
 	}
 }
 
