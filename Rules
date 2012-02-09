@@ -6,7 +6,7 @@ Compass.add_project_configuration 'compass/config.rb'
 Sass::Engine::DEFAULT_OPTIONS = Sass::Engine::DEFAULT_OPTIONS.dup.merge(Compass.sass_engine_options)
 
 compile '/stylesheets/main/' do
-  filter :sprockets
+  filter :sass
   filter :relativize_paths, :type => :css
 end
 
