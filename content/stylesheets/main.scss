@@ -203,21 +203,18 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
-/* ==|== primary styles =====================================================
-   Author: Ximus
-   ========================================================================== */
 
 $blueprint-grid-width: 23px;
 $blueprint-grid-margin: 7px;
 
-$alternating-color: #f6f4ec; 
+$alternating-color: #f6f4ec;
 
-$stronger-text-color: #2e2e2e;
-$normal-text-color: #454545;
+$stronger-text-color: black;
+$normal-text-color: #4a4a4a;
 $lighter-text-color: #7b7b7b;
 
 @import "blueprint/grid";
-@import "compass/css3/border-radius"; 
+@import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "compass/css3/transition";
 @import "compass/css3/opacity";
@@ -238,18 +235,22 @@ a[href*="pdf"].with-icon {
 	background: url(../images/pdf-icon.gif) no-repeat 0 50%;
 	padding-left: 20px; }
 
+em {
+	color: $stronger-text-color;
+}
+
 ul { padding-left: 1.4em; }
 ul ul { margin-top: 0.7em; }
-	
+
 h1, h2, h3 {
 	font-family: "Myriad Pro", "Helvetica Neue", "MS Trebuchet", sans-serif;
 	font-weight: 600; }
 
-h2 { font-size: 1.5em; }	
+h2 { font-size: 1.5em; }
 h3 { margin-top: 0; }
 
 // back to top
-h2 > a.top { 
+h2 > a.top {
 	color: $lighter-text-color;
 	float: right;
 	font-size: 0.5em;
@@ -259,42 +260,33 @@ h2 > a.top {
 section { margin-bottom: 28px; }
 section > section:last-child { margin-bottom: 0; }
 
-#toc {
-	display: none;
-	position: fixed;
-	width: 95px;
-	z-index: 20;
-	left: -112px;
-	top: 60px;
-	padding: 22px 26px 43px 26px; 
-	background: white url(../images/toc.png) no-repeat 100% 100%;
-	@include single-transition(left, 100ms, ease);
-	h3 { color: $lighter-text-color; }
-	li { padding-bottom: 2px; }
-	a, h2 {
-		@include opacity(0.6);
-		@include single-transition(opacity, 100ms, ease); }          
-	@include border-radius(5px);
-	@include single-box-shadow(#8d8d8d, 0, 0, 8px);
-	nav { margin-bottom: 18px; } }
-
-#toc:hover, #toc.showing {
-	left: -3px;
-	a, h2 { @include opacity(1); } }
+.inline-list {
+	$left_margin: 5px;
+	margin-left: -$left_margin;
+	list-style-type: none;
+	padding-left: 0;
+	li {
+		display: inline-block;
+		background: $alternating-color;
+		border-radius: 3px;
+		padding: 4px 8px;
+		margin: 4px $left_margin;
+	}
+}
 
 #container {
 	@include container;
 	@include single-box-shadow(#8d8d8d, 0, 0, 14px);
 	background: white url(../images/get-in-touch.gif) no-repeat 100% 0;
 	padding: 14px 44px;
-	margin: 19px auto;
+	margin: 60px auto;
 	z-index: 100; }
-	
+
 header {
 	@include column(16);
 	margin-bottom: 28px;
 	h1 { margin-bottom: 0.1em; }
-	h2 { 
+	h2 {
 		margin-top: 0.3em;
 		font-size: 1.6em;
 		img {
@@ -303,7 +295,7 @@ header {
 			vertical-align: baseline;
 			position: relative;	} }
 	p { color: $lighter-text-color; } }
-	
+
 section > h2 {
 	padding-bottom: 5px;
 	margin-bottom: 1em;
@@ -316,20 +308,20 @@ section > h2 {
 		margin-bottom: 4px;
 		@include clearfix;
 		list-style-type: none; }
-	li h3 { 
+	li h3 {
 		width: 56px;
 		font-size: 1.1em; }
-	li h3, 
+	li h3,
 	li p {
 		margin: 0px;
-		font-size: 1.1em; 
+		font-size: 1.1em;
 		float: left; }
 	.github {
 		margin-top: 18px;	} }
 
 #profile {
 	p {	text-align: justify; } }
-	
+
 #skills,
 #profile,
 #experience,
@@ -338,7 +330,7 @@ section > h2 {
 #interests,
 footer {
 	@include column(24, true); }
-	
+
 #skills {
 	div {
 		@include column(10, true); }
@@ -361,53 +353,53 @@ footer {
 		float: left;
 		margin-right: 1px;
 		overflow: hidden;
-		background: url(../images/stars.gif) no-repeat 0 0; 
+		background: url(../images/stars.gif) no-repeat 0 0;
 		&.empty { background-position: -13px 0; }	} }
-	
-#experience {
-	& > ul { 
-		margin-bottom: 0; }
-	& > ul > li { margin-bottom: 22px; }
-	& > ul > li:last-child { margin-bottom: 0; } }
 
 #projects {
-	ul { padding-left: 0; } } 
-	
+	ul { padding-left: 0; } }
+
 li.past-project {
 	@include border-radius(4px);
 	padding: 14px 26px;
-	
+
 	&:nth-child(2n+1) {
 		background-color: $alternating-color; }
  	list-style-type: none;
-	h3, 
-	h4,
-	hgroup,
-	p.period { 
+	h3,
+	p.client,
+	p.period {
 		margin: 0;
 		display: inline; }
 	p.description { margin-bottom: 0; }
-	
+
 	p.contact,
 	p.tools {
 		margin: 0.4em 0;
 		font-size: 0.9em;
 		span.label {
 			color: $lighter-text-color;
-			font-size: 0.9em; }	}                 
-	
+			font-size: 0.9em; }	}
+
 	p.contact { margin-top: 0.6em; }
-		
-	h3 { 
+
+	h3 {
+		font-size: 127%;
 		padding-right: 12px;
 		border-right: 1px solid $lighter-text-color; }
-	h4 { 
+	p.client {
+		font-weight: 600;
 		color: $lighter-text-color;
+		a,
+		a:focus,
+		a:visited {
+			color: $lighter-text-color;
+		}
 		margin-left: 12px;  }
-	
+
 	p.period { float: right; } }
-	
-	
+
+
 #other-sites {
 	margin-top: 26px;
 	li {
@@ -417,23 +409,23 @@ li.past-project {
 		@include border-radius(4px);
 		&:nth-child(2n+1) {
 			background-color: $alternating-color; }
-	  a, p { 
+	  a, p {
 		  display: inline;
 		  float: left; }
 		a {
-			font-weight: 600; 
+			font-weight: 600;
 			width: 150px; }
-	  p { margin: 0 12px; } } }   
-	
+	  p { margin: 0 12px; } } }
+
 footer {
-	img { 
+	img {
 		float: right;
 		position: relative;
 		top: 46px; }
 	p {
-		text-align: center; 
+		text-align: center;
 		color: $lighter-text-color;
-		@include opacity(0.9); 
+		@include opacity(0.9);
 		clear: both;
 		margin: .6em 0;
 	}
@@ -445,15 +437,64 @@ footer {
    These override the primary ('mobile first') styles
    Modify as content requires.
    ========================================================================== */
-
-@media only screen and (min-width: 480px) { }
-
-@media only screen and (min-width: 768px) {
-	#toc { display: block; } 
+#toc {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 20;
+	border-bottom: 1px solid #aaa;
+	background: white;
+	@include single-box-shadow(#8d8d8d, 0, 0, 8px);
+	padding: 10px 12px;
+	@include opacity(0.9);
+	@include single-transition(opacity, 200ms, ease-in-out);
+	a:hover { text-decoration: none; }
+	ul {
+		li {
+			display: inline-block;
+			margin: 0 6px;
+		}
+	}
+	nav, .pdf-link { display: inline-block; }
+	.pdf-link {
+		float: right;
+	}
+	h2 { display: none; }
+	li.selected {
+		border-bottom: 2px solid $normal-text-color;
+	}
 }
 
-@media only screen and (min-width: 1180px) {
- 	#toc { left: -3px; }
+#toc:hover, #toc.showing {
+	@include opacity(1);
+}
+
+@media only screen and (min-width: $blueprint-container-size) {
+
+}
+
+@media only screen and (min-width: 1100px) {
+ 	#toc {
+		width: 95px;
+		left: -3px;
+		top: 60px;
+		padding: 22px 26px 43px 26px;
+		border-bottom: none;
+		background: white url(../images/toc.png) no-repeat 100% 100%;
+		h3 { color: $lighter-text-color; }
+		li {
+			display: block !important;
+			padding-bottom: 2px;
+		}
+		@include border-radius(4px);
+		nav { margin-bottom: 18px; }
+
+		li.selected {
+			border-bottom: none;
+			text-decoration: underline;
+		}
+	}
 }
 
 
@@ -506,17 +547,27 @@ footer {
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h1, h2, h3, h4 { page-break-after: avoid; }
-	// This is not working (webkit)
 	#projects {
+		position: relative;
 		page-break-before: always;
 		page-break-inside: avoid; }
+	li.past-project, #other-sites li {
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+		position: relative;
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
 	h2 > a.top { display: none; }
 	#container {
 		margin-top:  0;
 		padding-top: 0;	}
 	#contact,
 	#skills {
-		a:after { content: ''; } }  
+		a:after { content: ''; } }
 	footer { display: none; }
 	#toc { display: none; }
+	.no-print {
+		display: none;
+	}
 }

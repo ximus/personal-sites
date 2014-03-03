@@ -1,12 +1,9 @@
-require 'nanoc3/tasks'
-
 task :deploy => [
   'compile:pdf_resume',
   'optimize:jpeg',
   'optimize:png',
   'optimize:css',
-  'optimize:js', 
-  'deploy:rsync']
+  'optimize:js']
 
 namespace :optimize do
   desc 'Optimise JPEG images in output/images directory using jpegoptim'
@@ -33,7 +30,7 @@ namespace :optimize do
   task :html do
     puts `find output -name '*.html' -exec htmlcompressor --type html '{}' -o '{}' \\;`
   end
-  
+
   desc 'Compress XML files in output directory using Google HTML Compressor'
   task :xml do
     puts `find output -name '*.xml' -exec htmlcompressor --type xml '{}' -o '{}' \\;`
@@ -46,7 +43,7 @@ end
 namespace :compile do
   desc "Generates the pdf version of my resume"
   task :pdf_resume do
-    puts `rvm system exec wkpdf -t 10000 --stylesheet-media print  -n --caching false -m 52  --source output/resume/index.html --output output/resume/maxime-liron-resume.pdf`
+    puts `bundle exec wkpdf -t 10000 --stylesheet-media print  -n --caching false -m 52  --source output/resume/index.html --output output/resume/maxime-liron-resume.pdf`
   end
 end
 
@@ -58,7 +55,7 @@ namespace :beautify do
     `find output -name '*.html'`.split("\n").each do |filepath|
       file = File.open(filepath, 'r+')
       output = ""
-      HtmlBeautifier::Beautifier.new(output).scan(file.read)      
+      HtmlBeautifier::Beautifier.new(output).scan(file.read)
       file.truncate(0)
       file.write(output)
       file.close

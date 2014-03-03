@@ -3,9 +3,9 @@
 # Set this to the root of your project when deployed:
 http_path = "/"
 project_path = "."
-css_dir = "output/stylesheets"
-sass_dir = "content/stylesheets"
-images_dir = "output/images" 
+css_dir    = "output/stylesheets"
+sass_dir   = "content/stylesheets"
+images_dir = "output/images"
 
 sass_options = {
   :syntax => :scss

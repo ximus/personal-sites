@@ -2,3 +2,5 @@
 /tmp
 .sass-cache
 /output
+/.bundle
+crash.log

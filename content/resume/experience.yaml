@@ -1,10 +1,18 @@
 main:
   -
+    title: Senior Software Engineer
+    client_name: Rearden Commerce <small>(now Deem)</small>, Homerun.com
+    client_url: http://www.deem.com/
+    description: "Created a consumer oriented mobile app for mobile commerce. Used the latest techniques in CSS3 animation and touch functionality. Having to deal with the constraints of mobile devices."
+    tools: "Ruby, Hadoop, Postfix, HTML/CSS, Javascript, Coffeescript, SASS"
+    started_in: 03/2012
+    finished_in: 09/2013
+  -
     title: Mobile Web App Design
     client_name: Blurt
     client_url: http://www.blurt.net/
     contact_with: Founder
-    description: "Created a consumer oriented mobile app for mobile commerce. Used the latest techniques in CSS3 animation and touch functionality. Having to deal with the constraints of mobile devices." 
+    description: "Created a consumer oriented mobile app for mobile commerce. Used the latest techniques in CSS3 animation and touch functionality. Having to deal with the constraints of mobile devices."
     tools: "HTML/CSS, Javascript, Coffeescript, SASS"
     date: 2011
   -
@@ -32,7 +40,7 @@ main:
     description: "A major learning experience. Built a collaborative web application to enable the sales team to work (much) more efficiently. Reception by users was great."
     tools: "Adobe Air, Flex (Actionscript framework), Ruby"
     started_in: 07/2009
-    finished_in: 11/2009 
+    finished_in: 11/2009
   -
     title: Visual Design
     client_name: Qualinetwork
@@ -54,7 +62,7 @@ main:
     title: Web Marketing
     client_name: Bazile Telecom
     client_url: http://www.bazile.fr/
-    contact_with: CEO, Marketing Manager 
+    contact_with: CEO, Marketing Manager
     description: Designed and implemented an small interactive client-side app so people could better understand the client's product.
     tools: "HTML/CSS, Actionscript, Illustrator, Photoshop"
     date: 2008
@@ -67,15 +75,15 @@ main:
     started_in: 09/2007
     finished_in: 01/2008
 various_sites:
-  - 
+  -
     url: forgedemontolieu.com
     description: "Bed & Breakfast in the south of France"
-  - 
+  -
     url: lalettrevolee.fr
     description: "Local bookshop"
-  - 
+  -
     url: francoisecullet.com
     description: "Artist in the south of France, earlier work"
-  - 
+  -
     url: oliviadegasquet.com
     description: "Another Artist, earlier work"

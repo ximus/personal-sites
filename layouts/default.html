@@ -1,51 +1,64 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
+<html lang="en">
+<head itemscope itemtype="http://schema.org/Person" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile#">
   <meta charset="utf-8">
 
   <title><%= @item[:title] %></title>
-  <meta name="description" content="<%= @item[:description] %>">
+
+  <meta name="description" content="<%= ::Site::SUMMARY %>">
   <meta name="author" content="Maxime Liron">
 
+  <!-- Google Authorship and Publisher Markup -->
+  <link rel="author" href="https://plus.google.com/104618138749013524886/posts" />
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="<%= @item[:title] %>">
+  <meta itemprop="description" content="<%= ::Site::SUMMARY %>">
+  <meta itemprop="image" content="<%= ::Site::PROFILE_PIC %>">
+  <meta itemprop="url" content="http://www.maximeliron.com">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:site" content="@ximus">
+  <meta name="twitter:title" content="<%= @item[:title] %>">
+  <meta name="twitter:description" content="<%= ::Site::SUMMARY %>">
+  <meta name="twitter:creator" content="@ximus">
+  <meta name="twitter:image:src" content="<%= ::Site::PROFILE_PIC %>">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="<%= @item[:title] %>" />
+  <meta property="og:type" content="profile" />
+  <meta property="profile:first_name" content="maxime" />
+  <meta property="profile:last_name" content="liron" />
+  <meta property="og:url" content="http://www.maximeliron.com/resume" />
+  <meta property="og:image" content="<%= ::Site::PROFILE_PIC %>" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  
+
   <!--[if lt IE 9]>
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
   <link rel="stylesheet" href="/stylesheets/main.css">
 
-  <script src="/javascripts/libs/modernizr-2.0.6.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" defer></script>
+  <script>window.jQuery || document.write('<script src="/javascripts/libs/jquery.js" defer><\/script>')</script>
   <script src="/javascripts/main.js" defer></script>
 </head>
 
 <body>
-  
+
   <div id="container" role="main">
     <%= yield %>
   </div> <!--! end of #container -->
 
-
   <script>
-    window._gaq = [['_setAccount','UA-25841356-1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-25841356-1', 'maximeliron.com');
+    ga('send', 'pageview');
   </script>
-
-
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-
 </body>
 </html>
