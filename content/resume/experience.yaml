@@ -1,9 +1,10 @@
 main:
   -
     title: Senior Software Engineer
-    client_name: Rearden Commerce <small>(now Deem)</small>, Homerun.com
+    client_name: Rearden Commerce, Homerun.com
     client_url: http://www.deem.com/
-    description: "Created a consumer oriented mobile app for mobile commerce. Used the latest techniques in CSS3 animation and touch functionality. Having to deal with the constraints of mobile devices."
+    contact_with: VP of Analytics, Offers engineering team, Offers product team
+    description: "Core participation in a lean e-commerce engineering team (payments, analytics, email, both front-end and back-end). Learned to use data and analytics to drive decision making. Regularly participated in product development. Partner relationships with industry heavyweights."
     tools: "Ruby, Hadoop, Postfix, HTML/CSS, Javascript, Coffeescript, SASS"
     started_in: 03/2012
     finished_in: 09/2013
@@ -12,14 +13,14 @@ main:
     client_name: Blurt
     client_url: http://www.blurt.net/
     contact_with: Founder
-    description: "Created a consumer oriented mobile app for mobile commerce. Used the latest techniques in CSS3 animation and touch functionality. Having to deal with the constraints of mobile devices."
+    description: "Created a consumer oriented mobile app for mobile commerce. Used the latest techniques in CSS3 animation and touch functionality. Learned how to deal with the constraints of mobile devices."
     tools: "HTML/CSS, Javascript, Coffeescript, SASS"
     date: 2011
   -
     title: Web Design
     client_name: Love the World
     client_url: http://www.lovetheworld.com/
-    contact_with: Head of communication
+    contact_with: Head of communications
     description: Implemented a CO<sub>2</sub> module to enable visitors to measure their country's CO<sub>2</sub> footprint
     tools: "HTML/CSS, Javascript, RaphaelJS (SVG framework)"
     started_in: 05/2011
@@ -46,7 +47,7 @@ main:
     client_name: Qualinetwork
     client_url: http://www.qualinetwork.com/
     contact_with: Founder and CEO
-    description: "Designed and implemented a visual graph to visulize customer feedback for products sold through e-commerce"
+    description: "Designed and implemented a visual graph to visualize customer feedback for products sold through e-commerce"
     tools: "HTML/CSS, Actionscript"
     started_in: 05/2011
     finished_in: 06/2011
@@ -55,7 +56,7 @@ main:
     client_name: Scalr
     client_url: http://wwww.scalr.net/
     contact_with: Founder and CEO
-    description: "Participated in the branding thought process, recorded some screencasts, designed the web site. Gave me a strong understanding of cloud computing"
+    description: "Participated in the branding thought process, recorded screencasts, designed the web site. Gave me a strong understanding of cloud computing"
     tools: "HTML/CSS, Illustrator, Photoshop, Mindtouch (wiki platform), Camtasia Studio (screencast recording)"
     date: 2009
   -
@@ -74,6 +75,7 @@ main:
     tools: "HTML/CSS, Javascript, PHP, Illustrator, Photoshop"
     started_in: 09/2007
     finished_in: 01/2008
+
 various_sites:
   -
     url: forgedemontolieu.com

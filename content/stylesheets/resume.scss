@@ -371,7 +371,10 @@ li.past-project {
 	p.period {
 		margin: 0;
 		display: inline; }
-	p.description { margin-bottom: 0; }
+	p.description {
+		margin-bottom: 0;
+		text-align: justify;
+	}
 
 	p.contact,
 	p.tools {

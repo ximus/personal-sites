@@ -10,8 +10,10 @@ gem "nutils"
 
 gem "sass"
 gem "compass"
+gem 'compass-blueprint'
+gem 'compass-normalize'
 gem "coffee-script"
 gem "sprockets"
 gem "nokogiri"
 gem "erubis"
-gem "wkpdf"
+gem "kramdown"

@@ -1,13 +1,22 @@
 #!/usr/bin/env ruby
-require 'compass' 
+
+# upgrading to nanoc4 will simplify alot of this
+
+require 'compass'
+require 'nanoc/helpers/filtering'
 
 # Need this for Compass to work
 Compass.add_project_configuration 'compass/config.rb'
 Sass::Engine::DEFAULT_OPTIONS = Sass::Engine::DEFAULT_OPTIONS.dup.merge(Compass.sass_engine_options)
 
-compile '/stylesheets/main/' do
-  filter :sass
-  filter :relativize_paths, :type => :css
+
+compile /vendor|stylesheets/ do
+  if !item.binary?
+    if item[:extension].end_with? 'css'
+      filter :sass
+      filter :relativize_paths, type: :css
+    end
+  end
 end
 
 compile '/javascripts/main/' do
@@ -15,35 +24,48 @@ compile '/javascripts/main/' do
 end
 
 compile '/javascripts/*/' do
-end 
+end
 
 compile '/robots/' do
-end   
+end
+
+# compile '*.md' do
+#   filter :kramdown
+# end
 
 compile '*' do
   if !item.binary?
     filter :erubis
-    layout 'default'
-    if item[:extension] == 'html'
-      filter :relativize_paths, :type => :html 
+    if item[:extension] == 'md'
+      filter :kramdown
+    end
+    if ['html', 'md'].include? item[:extension]
+      layout item[:layout] || 'default'
+      # filter :relativize_paths, type: :html
     end
   end
 end
 
-route '/stylesheets/main/' do                                                             
-  '/stylesheets/main.css'
+route '/stylesheets/*/' do
+  item.identifier.chop + '.css'
 end
 
 route '/javascripts/*' do
   if !item.binary?
     item.identifier.chop + '.js'
-  end  
+  end
 end
 
 # Just copy the rest over
 route '*' do
   if item[:content_filename]
-    item[:content_filename].gsub(/^content/, '')
+    path = item[:content_filename].gsub(/^content/, '')
+
+    # replace .md by .html
+    if item[:extension] == 'md'
+      path = path.gsub(/\.md$/, '.html')
+    end
+    path
   end
 end
 

@@ -47,5 +47,6 @@ data_sources:
 
 deploy:
   default:
+    kind: rsync
     options: [ '-Prtvz', '--delete-after', '--progress' ]
-    dst: "maximeliron@maximeliron.com:www"
+    dst: "maximeliron@maximeliron.com:public"

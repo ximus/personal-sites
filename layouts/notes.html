@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title><%= @item[:title] %></title>
+  <meta name="description" content="<%= @item[:summary] %>">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+  <%= render 'common/footer'  %>
+  <link rel="stylesheet" href="vendor/github-markdown-css/github-markdown.css">
+  <link rel="stylesheet" href="../stylesheets/note.css">
+</head>
+
+<body>
+
+  <div class="markdown-body" role="main">
+    <%= yield %>
+  </div>
+
+  <%= render 'common/footer'  %>
+</body>
+</html>

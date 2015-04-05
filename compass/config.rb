@@ -1,4 +1,6 @@
-# Require any additional compass plugins here.
+require 'compass'
+require 'compass-blueprint'
+require 'compass-normalize'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
@@ -8,7 +10,7 @@ sass_dir   = "content/stylesheets"
 images_dir = "output/images"
 
 sass_options = {
-  :syntax => :scss
+  syntax: :scss
 }
 
 # You can select your preferred output style here (can be overridden via the command line):

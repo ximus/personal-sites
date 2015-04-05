@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title><%= @item[:title] %></title>
+
+  <meta name="description" content="<%= ::Site::SUMMARY %>">
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="<%= @item[:title] %>">
+  <meta itemprop="description" content="<%= ::Site::SUMMARY %>">
+  <meta itemprop="image" content="<%= ::Site::PROFILE_PIC %>">
+  <meta itemprop="url" content="http://www.maximeliron.com/short">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:site" content="@ximus">
+  <meta name="twitter:title" content="<%= @item[:title] %>">
+  <meta name="twitter:description" content="<%= ::Site::SUMMARY %>">
+  <meta name="twitter:creator" content="@ximus">
+  <meta name="twitter:image:src" content="<%= ::Site::PROFILE_PIC %>">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="<%= @item[:title] %>" />
+  <meta property="og:type" content="profile" />
+  <meta property="profile:first_name" content="maxime" />
+  <meta property="profile:last_name" content="liron" />
+  <meta property="og:url" content="http://www.maximeliron.com/short" />
+  <meta property="og:image" content="<%= ::Site::PROFILE_PIC %>" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <%= render 'common/head'  %>
+</head>
+
+<body>
+
+  <div id="container" role="main">
+    <%= yield %>
+  </div>
+
+  <%= render 'common/footer'  %>
+</body>
+</html>

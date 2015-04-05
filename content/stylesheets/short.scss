@@ -1,0 +1,50 @@
+@import "normalize";
+@import "compass/css3/flexbox";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  padding: 0.6em 0;
+}
+
+.highlight {
+  background-color: #F2F2F2;
+  // prevent margin collapse
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+h1, h2, h3, .quote {
+  font-weight: 400;
+  margin: 0.4em 0;
+}
+
+#container > * {
+  padding-right: 16px;
+  padding-left:  16px;
+}
+
+@media (min-width: 600px) {
+  #container > * {
+    padding-left: 20%;
+  }
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1.2em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
