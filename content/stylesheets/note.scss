@@ -1,5 +1,68 @@
+@import "normalize";
+
+// styling is mobile first
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  max-width: 600px;
-  padding-top: 60px;
-  margin: 0 auto;
+  margin: 0.8em;
+}
+
+article {
+  max-width: 42em;
+  padding-top: 30px;
+  margin: auto;
+}
+
+$image-list-padding: 8px;
+ul.image-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0;
+}
+
+ul.image-list li {
+  padding: $image-list-padding/2;
+  width: 100%;
+  align-self:stretch;
+  img {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 420px) {
+    width: 50%;
+  }
+
+  @media only screen and (min-width: 700px) {
+    width: 33.3%;
+  }
+
+  @media only screen and (min-width: 1100px) {
+    width: 25%;
+  }
+}
+
+
+// lightbox styles
+
+#lightbox {
+  position: fixed;
+  top: 6% !important;
+}
+
+.lb-outerContainer {
+  border-radius: 0;
+}
+
+.lightbox .lb-image {
+  border-radius: 0;
+}
+
+.lb-dataContainer {
+  margin-top: 0.8em;
 }

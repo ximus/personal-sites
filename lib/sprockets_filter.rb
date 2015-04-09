@@ -10,15 +10,15 @@ class SprocketWheel < Nanoc3::Filter
   #
   # @return [String] The filtered content.
   def run(content, params={})
-    require "sprockets"   
-    
+    require "sprockets"
+
     # load_path can be a String or Array of Strings
     load_path = params[:load_path] || File.dirname(@item[:filename])
     # The item's filename
     filename  = File.basename(@item[:filename])
 
     env = Sprockets::Environment.new
-    
+
     # Assign Array or String load paths to Sprockets
     if load_path.kind_of?(Array)
       load_path.each do |path|
@@ -27,26 +27,26 @@ class SprocketWheel < Nanoc3::Filter
     else
       env.append_path(load_path)
     end
-    
+
     # Get the Sprockets BundledAsset object for the item
     asset = env.find_asset(filename)
-    
+
     # Make sure sure the item is recompiled if a depended asset is dirty!
     # Gather dependent items
     item_dependencies = asset.dependencies.collect do |asset_dep|
       # Find its corresponding Nanoc item.
       imported_filename_to_item(asset_dep.pathname)
     end
-    
-    # Register them as dependendcies with Nanoc 
+
+    # Register them as dependendcies with Nanoc
     depend_on(item_dependencies)
-    
+
     # Output compiled asset
     asset.to_s
   end
-  
+
   private
-  
+
   # Find a Nanoc item using a filename
   def imported_filename_to_item(filename)
     path = Pathname.new(filename).realpath
@@ -54,5 +54,5 @@ class SprocketWheel < Nanoc3::Filter
       next if i[:content_filename].nil?
       Pathname.new(i[:content_filename]).realpath == path
     end
-  end  
+  end
 end

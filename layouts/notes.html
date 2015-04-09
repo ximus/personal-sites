@@ -8,16 +8,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 
-  <%= render 'common/footer'  %>
-  <link rel="stylesheet" href="vendor/github-markdown-css/github-markdown.css">
-  <link rel="stylesheet" href="../stylesheets/note.css">
+  <%= render 'common/head'  %>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2:600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/vendor/github-markdown-css/github-markdown.css">
+  <link rel="stylesheet" href="/vendor/lightbox/css/lightbox.css">
+  <link rel="stylesheet" href="/stylesheets/note.css">
+
+  <script src="/vendor/lightbox/js/lightbox.js" defer=""></script>
+  <script src="/javascripts/notes.js" defer=""></script>
 </head>
 
-<body>
+<body class="markdown-body">
 
-  <div class="markdown-body" role="main">
+  <article role="main">
     <%= yield %>
-  </div>
+  </article>
+
+  <%= content_for(@item, :footer) %>
 
   <%= render 'common/footer'  %>
 </body>

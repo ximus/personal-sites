@@ -1,4 +1,3 @@
-require 'compass'
 require 'compass-blueprint'
 require 'compass-normalize'
 
