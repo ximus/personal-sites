@@ -13,6 +13,7 @@ gem "compass"
 gem 'compass-blueprint'
 gem 'compass-normalize'
 gem "coffee-script"
+gem "autoprefixer-rails"
 gem "sprockets"
 gem "nokogiri"
 gem "erubis"

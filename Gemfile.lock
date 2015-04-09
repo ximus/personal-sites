@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    autoprefixer-rails (5.1.8)
+      execjs
+      json
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chunky_png (1.3.4)
@@ -46,6 +49,7 @@ GEM
       nanoc (~> 3.6)
     hike (1.2.3)
     hitimes (1.2.2)
+    json (1.8.2)
     kramdown (1.6.0)
     listen (2.10.0)
       celluloid (~> 0.16.0)
@@ -90,6 +94,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   coffee-script
   compass
   compass-blueprint

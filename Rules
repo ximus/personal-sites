@@ -14,6 +14,7 @@ compile /vendor|stylesheets/ do
   if !item.binary?
     if item[:extension].end_with? 'css'
       filter :sass
+      filter :autoprefix
       filter :relativize_paths, type: :css
     end
   end
