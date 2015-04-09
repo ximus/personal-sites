@@ -1,5 +1,7 @@
 ---
-title: Portail Notes
+title: Notes On Connecting My Home Gate To The Internet
+description: Notes on how I used sub-Ghz radios, a laser and an xport to connect my home gate to the internet
+image: "http://maximeliron.com/images/gate-flow.png"
 layout: notes
 ---
 
@@ -7,7 +9,7 @@ layout: notes
 What you'll learn about here is how I used sub-Ghz radios, a laser and an xport to connect my home gate to the internet.
 
 ## Problem
-![Illustration of the gate communication problem](images/gate-illustration.png)
+![Illustration of the gate communication problem](../images/gate-illustration.png)
 
 We just installed an automatic gate at home. It is far from the house and we didn't install an intercom. Those who live here can get in using a remote. And if you are a guest, there is a code you can dial if you know it.
 
@@ -26,7 +28,7 @@ Visitors interact with a web client which communicates with an endpoint located 
 
 This overview of the request flow gives a wide angle view:
 
-![Illustration of the gate communication problem](images/gate-flow.png)
+![Illustration of the gate communication problem](../images/gate-flow.png)
 
 ### Web Stack
 
@@ -42,7 +44,7 @@ Basic framework
 Rationale: I'm used to it, it's fun. I intially started using NodeJS as I thought some companies would appriciate that on my resume. I moved forward with not just one, but a few different NodeJS web frameworks. However I backed away from NodeJS frameworks after getting sick of having to implement my own plumbing too often. Javascript is fun in the browser but I vastly prefer Ruby's syntax and ecosystem on the server.
 
 ### Home: Internet Gateway
-![Illustration of the gate communication problem](images/gateway-diagram.png)
+![Illustration of the gate communication problem](../images/gateway-diagram.png)
 
 I'm using a [Lantronix XPort Pro](http://www.lantronix.com/device-networking/embedded-device-servers/xport-pro.html) connected to a [Wizzimote node](http://www.wizzilab.com/solutions/wizzikit/).
 
@@ -55,7 +57,7 @@ Why UART? The XPort is designed to interface over UART. This is the channel over
 There was no opportunity to have fun and research IoT network routing as there are only two nodes. To keep things simple I am using the hardware radio packet facility provided by the CC430 chip.
 
 ### Gate: Control and Observation
-![Illustration of the gate communication problem](images/gate-diagram.png)
+![Illustration of the gate communication problem](../images/gate-diagram.png)
 
 Located near the gate is a second Wizzimote. This guy is made up of alot more code than its gateway brother.
 
@@ -134,5 +136,10 @@ There was some photographic record, [check it out](https://picasaweb.google.com/
 
 <% content_for :footer do %>
   <br>
-	<div data-google-album-id="6135261418453095361"></div>
+	<div data-google-album-id="6135261418453095361">
+    <p>Loading images ...</p>
+    <p>
+      Images are hosted on Google Picassa. If you can read this then it may be blocked by your privacy blocker
+    </p>
+  </div>
 <% end  %>

@@ -18,12 +18,12 @@ namespace :optimize do
 
   desc 'Compress CSS files in output/style directory using YUI Compressor'
   task :css do
-    puts `find output/stylesheets -name '*.css' -exec yuicompressor --type css '{}' -o '{}' \\;`
+    puts `find output/ -name '*.css' -exec yuicompressor --type css '{}' -o '{}' \\;`
   end
 
   desc 'Compress JavaScript files in output/script directory using YUI Compressor'
   task :js do
-    puts `find output/javascripts -name '*.js' -exec yuicompressor --type js '{}' -o '{}' \\;`
+    puts `find output -name '*.js' -exec yuicompressor --type js '{}' -o '{}' \\;`
   end
 
   desc 'Compress HTML files in output directory using Google HTML Compressor'

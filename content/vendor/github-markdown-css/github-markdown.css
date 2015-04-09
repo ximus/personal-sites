@@ -5,7 +5,7 @@
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #444;
+  color: #555;
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
@@ -122,8 +122,8 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  color: #333;
+  margin-bottom: 0.6em;
   line-height: 1.1;
   font-family: Ubuntu, "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-family: "Exo 2", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
@@ -131,12 +131,12 @@
 
 .markdown-body h1 {
   font-size: 30px;
-  margin-top: 30px;
+  margin-top: 1.8em;
 }
 
 .markdown-body h2 {
   font-size: 21px;
-  margin-top: 25px;
+  margin-top: 1.4em;
 }
 
 .markdown-body h3 {
@@ -193,10 +193,6 @@
   font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
-.markdown-body .octicon-link:before {
-  content: '\f05c';
-}
-
 .markdown-body>*:first-child {
   margin-top: 0 !important;
 }
@@ -231,21 +227,8 @@
 .markdown-body h5,
 .markdown-body h6 {
   position: relative;
-  margin-top: 1em;
-  margin-bottom: 16px;
   font-weight: bold;
   line-height: 1.4;
-}
-
-.markdown-body h1 .octicon-link,
-.markdown-body h2 .octicon-link,
-.markdown-body h3 .octicon-link,
-.markdown-body h4 .octicon-link,
-.markdown-body h5 .octicon-link,
-.markdown-body h6 .octicon-link {
-  display: none;
-  color: #000;
-  vertical-align: middle;
 }
 
 .markdown-body h1:hover .anchor,
@@ -257,15 +240,6 @@
   padding-left: 8px;
   margin-left: -30px;
   text-decoration: none;
-}
-
-.markdown-body h1:hover .anchor .octicon-link,
-.markdown-body h2:hover .anchor .octicon-link,
-.markdown-body h3:hover .anchor .octicon-link,
-.markdown-body h4:hover .anchor .octicon-link,
-.markdown-body h5:hover .anchor .octicon-link,
-.markdown-body h6:hover .anchor .octicon-link {
-  display: inline-block;
 }
 
 .markdown-body h1 {
@@ -322,6 +296,10 @@
 
 .markdown-body h6 .anchor {
   line-height: 1.1;
+}
+
+.markdown-body p {
+  text-align: justify;
 }
 
 .markdown-body p,

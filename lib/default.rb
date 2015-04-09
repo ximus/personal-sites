@@ -9,11 +9,6 @@ include Nanoc3::Helpers::Rendering
 include Nanoc3::Helpers::Filtering
 include Nanoc3::Helpers::LinkTo
 
-module Site
-  PROFILE_PIC = "http://www.maximeliron.com/images/me.png"
-  SUMMARY = "Web swiss army knife, general technologist"
-end
-
 module Helpers
   def item_with_identifier(identifier)
     @items.find { |i| i.identifier == identifier }
