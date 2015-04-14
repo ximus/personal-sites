@@ -22,8 +22,12 @@ a {
   display: inline-block;
 }
 
+header {
+  padding-top: 0.6em;
+}
+
 .highlight {
-  background-color: #F2F2F2;
+  background-color: #f6f6f6;
   // prevent margin collapse
   overflow: hidden;
   margin-top: 2em;

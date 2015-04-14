@@ -1,0 +1,16 @@
+import "../shared/tasks.rake"
+
+task :deploy => [
+  'compile:pdf_resume',
+  'optimize:jpeg',
+  'optimize:png',
+  'optimize:css',
+  'optimize:js']
+
+namespace :compile do
+  desc "Generates the pdf version of my resume"
+  task :pdf_resume do
+    # puts `bundle exec wkpdf -t 10000 --stylesheet-media print  -n --caching false -m 52  --source output/resume/index.html --output output/resume/maxime-liron-resume.pdf`
+    puts `wkhtmltopdf --print-media-type output/resume/index.html output/resume/maxime-liron-resume.pdf`
+  end
+end

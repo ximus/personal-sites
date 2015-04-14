@@ -5,6 +5,8 @@ require "erubis"
 require "nokogiri"
 require "yaml"
 
+Dir["../../shared/lib/*"].each { |path| require path }
+
 include Nanoc3::Helpers::Rendering
 include Nanoc3::Helpers::Filtering
 include Nanoc3::Helpers::LinkTo

@@ -1,0 +1,69 @@
+#!/usr/bin/env ruby
+
+# upgrading to nanoc4 will simplify alot of this
+
+require 'compass'
+require 'nanoc/helpers/filtering'
+
+# Need this for Compass to work
+Compass.add_project_configuration 'compass/config.rb'
+Sass::Engine::DEFAULT_OPTIONS = Sass::Engine::DEFAULT_OPTIONS.dup.merge(Compass.sass_engine_options)
+
+
+compile /vendor|stylesheets/ do
+  if !item.binary?
+    if item[:extension].end_with? 'css'
+      filter :sass
+      filter :autoprefix
+      filter :relativize_paths, type: :css
+    end
+  end
+end
+
+compile '/javascripts/main/' do
+  filter :sprockets
+end
+
+compile '/javascripts/*/' do
+end
+
+compile '/robots/' do
+end
+
+compile '*' do
+  if !item.binary?
+    filter :erubis
+    if item[:extension] == 'md'
+      filter :kramdown
+    end
+    if ['html', 'md'].include? item[:extension]
+      layout 'notes'
+      # filter :relativize_paths, type: :html
+    end
+  end
+end
+
+route '/stylesheets/*/' do
+  item.identifier.chop + '.css'
+end
+
+route '/javascripts/*' do
+  if !item.binary?
+    item.identifier.chop + '.js'
+  end
+end
+
+# Just copy the rest over
+route '*' do
+  if item[:content_filename]
+    path = item[:content_filename].gsub(/^content/, '')
+
+    # replace .md by .html
+    if item[:extension] == 'md'
+      path = path.gsub(/\.md$/, '.html')
+    end
+    path
+  end
+end
+
+layout '*', :erb
