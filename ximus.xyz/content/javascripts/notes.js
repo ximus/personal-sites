@@ -1,7 +1,7 @@
 $(function() {
   "use strict";
 
-  var ALBUM_URL = "http://picasaweb.google.com/data/feed/api/user/104618138749013524886/albumid/ALBUM_ID?alt=json&fields=entry(content,media:group)&imgmax=1000"
+  var ALBUM_URL = "//picasaweb.google.com/data/feed/api/user/104618138749013524886/albumid/ALBUM_ID?alt=json&fields=entry(content,media:group)&imgmax=1000"
 
   var options  = new LightboxOptions();
   var lightbox = new Lightbox(options);

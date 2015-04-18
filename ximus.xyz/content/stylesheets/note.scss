@@ -32,6 +32,7 @@ ul.image-list li {
   align-self:stretch;
   img {
     width: 100%;
+    border: 1px solid #aaa;
   }
 
   @media only screen and (min-width: 420px) {
