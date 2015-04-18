@@ -56,6 +56,19 @@ Why UART? The XPort is designed to interface over UART. This is the channel over
 
 There was no opportunity to have fun and research IoT network routing as there are only two nodes. To keep things simple I am using the hardware radio packet facility provided by the CC430 chip.
 
+<div class="side-note">
+Why wizzimotes? Why Riot-OS?
+
+Wizzimotes are modules intended to explore the [DASH7](http://www.dash7-alliance.org/) IoT network stack. They are low power and come with a an SDK that includes a lightweight OS layer comprised of a [HAL](http://en.wikipedia.org/wiki/HAL_%28software%29), process management (using pthreads) and DASH7 radio lib. I initially started developing using these tools and exploring this code was very educative; it's well written and efficient.
+
+At some point I came accross [Riot-OS](http://www.riot-os.org/). I decided to switch over to Riot:
+
+* Riot is open source and open to the public (Wizzlab's code wasn't). That means more contributors, and codebase likely more representative of industry coding standards.
+* Riot was in line with my hardware: it already had support for the wizzimote's CC430 MCU and its 2Kb of RAM
+* Riot was in line with my project goal: this is it's current slogan: "The friendly Operating System for the Internet of Things"
+* Riot was great opportunity to learn more about emebeded development. My main project goal was educational, I got to learn tons by digging into Riot.
+</div>
+
 ### Gate: Control and Observation
 ![Illustration of the gate communication problem](../images/gate-diagram.png)
 
@@ -143,3 +156,31 @@ There was some photographic record, [check it out](https://picasaweb.google.com/
     </p>
   </div>
 <% end  %>
+
+
+De Spreeuw, experts recommend that you do not use the schema breadcrumb markup for the time being, as there is some sort of glitch in the breadcrumb structure.  Instead, try using the data-vocabulary.org breadcrumb markup, which Google and the other search engines can easily read as well.  Here's an example of how you would mark up a page with the data-vocabulary.org breadcrumb markup:
+
+<div>
+  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="http://www.contoso.com/" itemprop="url">
+      <span itemprop="title">Contoso</span>
+    </a> »
+  </span>
+  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="http://www.contoso.com/fashion/" itemprop="url">
+      <span itemprop="title">Fashion</span>
+    </a> »
+  </span>
+  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="http://www.contoso.com/fashion/women/" itemprop="url">
+      <span itemprop="title">Women</span>
+    </a> »
+  </span>
+  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="http://www.contoso.com/fashion/women/boots/" itemprop="url">
+      <span itemprop="title">Boots</span>
+    </a>
+  </span>
+</div>
+
+That markup would produce this on your page and in the SERPs:  Contoso>Fashion>Women>Boots
