@@ -44,6 +44,10 @@ data_sources:
 
     config:
       allow_periods_in_identifiers: true
+  -
+    # data source for shared items
+    layouts_dir: ../shared/layouts
+    content_dir: ../shared/content
 
 deploy:
   default:

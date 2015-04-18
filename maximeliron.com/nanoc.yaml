@@ -46,8 +46,8 @@ data_sources:
       allow_periods_in_identifiers: true
   -
     # data source for shared items
-    layouts_dir: ../../shared/layouts
-    content_dir: ../../shared/content
+    layouts_dir: ../shared/layouts
+    content_dir: ../shared/content
 
 deploy:
   default:
