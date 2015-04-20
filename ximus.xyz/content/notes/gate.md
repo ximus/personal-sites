@@ -1,8 +1,9 @@
 ---
-title: Notes On Connecting My Home Gate To The Internet
+title: Using sub-Ghz radios, a laser and an xport to connect my home gate to the internet
 description: Notes on how I used sub-Ghz radios, a laser and an xport to connect my home gate to the internet
 image: "http://maximeliron.com/images/gate-flow.png"
 layout: notes
+kind: article
 ---
 
 # Portail Notes
@@ -156,31 +157,3 @@ There was some photographic record, [check it out](https://picasaweb.google.com/
     </p>
   </div>
 <% end  %>
-
-
-De Spreeuw, experts recommend that you do not use the schema breadcrumb markup for the time being, as there is some sort of glitch in the breadcrumb structure.  Instead, try using the data-vocabulary.org breadcrumb markup, which Google and the other search engines can easily read as well.  Here's an example of how you would mark up a page with the data-vocabulary.org breadcrumb markup:
-
-<div>
-  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    <a href="http://www.contoso.com/" itemprop="url">
-      <span itemprop="title">Contoso</span>
-    </a> »
-  </span>
-  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    <a href="http://www.contoso.com/fashion/" itemprop="url">
-      <span itemprop="title">Fashion</span>
-    </a> »
-  </span>
-  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    <a href="http://www.contoso.com/fashion/women/" itemprop="url">
-      <span itemprop="title">Women</span>
-    </a> »
-  </span>
-  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    <a href="http://www.contoso.com/fashion/women/boots/" itemprop="url">
-      <span itemprop="title">Boots</span>
-    </a>
-  </span>
-</div>
-
-That markup would produce this on your page and in the SERPs:  Contoso>Fashion>Women>Boots

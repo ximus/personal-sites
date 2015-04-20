@@ -1,0 +1,17 @@
+---
+title: Notes
+---
+
+<% content_for :head do %>
+  <link rel="stylesheet" href="stylesheets/toc.css">
+<% end %>
+
+<nav>
+  <ul>
+    <% sorted_articles.each do |post| %>
+      <li>
+        <%= link_to post[:title], post.path %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

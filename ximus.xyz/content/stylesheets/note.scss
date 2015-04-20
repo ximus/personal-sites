@@ -1,21 +1,66 @@
 @import "normalize";
 
-// styling is mobile first
+$mobile-margin:  16px;
+$desktop-margin: 22px;
+
+$deskop-and-up: 800px;
+
+/**
+ * styling is mobile first
+ */
 
 * {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
 }
 
-body {
-  margin: 0.8em;
+html, body {
+  background: #efefef;
+  height: 100%
 }
 
 article {
-  max-width: 40em;
-  padding-top: 0.4em;
-  margin: auto;
+  transition: all 400ms;
+
+  max-width: 42em;
+  min-height: 100%;
+  padding: 1.6em $mobile-margin;
+  margin: 0;
+  background: white;
+
+  @media only screen and (min-width: $deskop-and-up) {
+    padding-top: 2em;
+    margin-top: $desktop-margin;
+    padding: 1.6em $desktop-margin;
+  }
 }
+
+#slightly-off-center {
+  display: flex;
+  justify-content: center;
+  min-height: 90%;
+
+  & > div:first-child {
+    flex: 1;
+  }
+
+  & > article {
+    flex: 100;
+  }
+
+  & > div:last-child {
+    flex: 3;
+  }
+
+  & > div {
+    display: none;
+    @media only screen and (min-width: $deskop-and-up) {
+      display: block;
+    }
+  }
+}
+
+
 
 $image-list-padding: 8px;
 ul.image-list {
@@ -49,7 +94,9 @@ ul.image-list li {
 }
 
 
-// lightbox styles
+/**
+ * lightbox styles
+ */
 
 #lightbox {
   position: fixed;

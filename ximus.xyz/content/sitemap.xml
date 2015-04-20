@@ -1,0 +1,7 @@
+<%
+  items = @items.select do |item|
+    !item.binary? &&
+    (item.identifier == "/" || item[:kind] == 'article')
+  end
+%>
+<%= xml_sitemap items: items %>

@@ -20,7 +20,7 @@ compile /vendor|stylesheets/ do
   end
 end
 
-compile '/javascripts/main/' do
+compile '/javascripts/notes/' do
   filter :sprockets
 end
 
@@ -34,12 +34,13 @@ compile '*' do
   if !item.binary?
     filter :erubis
     if item[:extension] == 'md'
-      filter :kramdown
+      filter :kramdown, parse_block_html: true
     end
     if ['html', 'md'].include? item[:extension]
       layout 'notes'
       # filter :relativize_paths, type: :html
     end
+    filter :wrap_images
     filter :cache_buster
   end
 end

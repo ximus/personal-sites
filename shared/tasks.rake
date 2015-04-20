@@ -36,13 +36,14 @@ end
 namespace :beautify do
   desc "Make the HTML pretty"
   task :html do
-    require "htmlbeautifier/beautifier"
+    require "htmlbeautifier"
     # This isn't working yet, ouput is weird
+    puts "Running HTML tidy"
     `find output -name '*.html'`.split("\n").each do |filepath|
       file = File.open(filepath, 'r+')
-      output = ""
-      HtmlBeautifier::Beautifier.new(output).scan(file.read)
+      output = HtmlBeautifier.beautify(file.read)
       file.truncate(0)
+      file.pos = 0
       file.write(output)
       file.close
     end
