@@ -297,10 +297,6 @@
   line-height: 1.1;
 }
 
-.markdown-body p {
-  text-align: justify;
-}
-
 .markdown-body p,
 .markdown-body blockquote,
 .markdown-body ul,
@@ -471,7 +467,7 @@
   padding: 3px 5px;
   font-size: 11px;
   line-height: 10px;
-  color: #555;
+  color: #444;
   vertical-align: middle;
   background-color: #fcfcfc;
   border: solid 1px #ccc;

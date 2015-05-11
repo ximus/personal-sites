@@ -15,7 +15,6 @@ $deskop-and-up: 800px;
 }
 
 html, body {
-  background: #efefef;
   height: 100%
 }
 
@@ -57,6 +56,17 @@ article {
     @media only screen and (min-width: $deskop-and-up) {
       display: block;
     }
+  }
+}
+
+.side-note {
+  padding: 1.4em;
+  border-radius: 12px;
+  background: aliceblue;
+
+  & > :first-child {
+    margin-top: 0.2em;
+    line-height: 100%;
   }
 }
 
