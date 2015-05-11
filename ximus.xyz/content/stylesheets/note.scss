@@ -68,8 +68,15 @@ article {
     margin-top: 0.2em;
     line-height: 100%;
   }
+  & > :last-child {
+    margin-bottom: 0;
+  }
 }
 
+.warn {
+  @extend .side-note;
+  background: lemonchiffon;
+}
 
 
 $image-list-padding: 8px;
@@ -78,7 +85,6 @@ ul.image-list {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  font-size: 0;
 }
 
 ul.image-list li {
@@ -88,6 +94,12 @@ ul.image-list li {
   img {
     width: 100%;
     border: 1px solid #aaa;
+  }
+
+  a {
+    color: #999;
+    font-size: 92%;
+    text-decoration: none;
   }
 
   @media only screen and (min-width: 420px) {

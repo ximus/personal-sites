@@ -34,11 +34,13 @@ window.initGallery = function(lightbox) {
           var id = image['media$group']['media$title']['$t']
           id = encodeURIComponent(id)
           var url = image.content.src
+          var caption = image['media$group']['media$description']['$t']
           var thumb = largestGoogleThumb(image['media$group']['media$thumbnail'])
           items.push(
             "<li id='" + id + "'>\
               <a href='" + url + "' data-lightbox='" + albumID + "'>\
                 <img src='" + thumb.url + "'>\
+                <span>" + caption + "</span>\
               </a>\
             </li>"
           )

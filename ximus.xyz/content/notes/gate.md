@@ -1,7 +1,7 @@
 ---
 title: Using sub-Ghz radios, a laser and an xport to connect my home gate to the internet
 description: Notes on using sub-Ghz radios and a Banner L-GAGE LT3 laser to control my home gate from the internet along with a Lantronix XPort Pro, Wizzilab wizzimotes.
-keywords: wizzimote, wizzilab, Banner L-GAGE LT3, xport, lantronix xport, gate, automation, portail, polymerjs, ruby, javascript, c
+keywords: wizzimote, wizzilab, Banner L-GAGE LT3, xport, lantronix xport, gate, automation, portail, polymerjs, ruby, javascript, c, intel edison, edison, stepper motor
 image: "http://ximus.xyz/images/gate-flow.png"
 layout: notes
 kind: article
@@ -27,6 +27,10 @@ These notes are from a personal educational project exploring electronics. Thoug
 
 The main objective of this endeavour was to learn electronics. Design decisions were optimized for learning experience first, technical efficiency came in second so expect sub-optimal decisions on that front.
 
+<div class="warn">
+  This project is not yet complete, these notes are a work in progress.
+</div>
+
 ## Code
 
 * Web front-end: [portail-webclient](https://github.com/ximus/portail-webclient)
@@ -36,13 +40,15 @@ The main objective of this endeavour was to learn electronics. Design decisions 
 
 ## System Design
 
-Visitors interact with a web client which communicates with an endpoint located at my house acting as gateway, which in turn communicates with a module located near the gate that interfaces with the gate.
+Visitors interact with a web client which communicates with an endpoint located at my house acting as gateway, which in turn communicates with a module located near the gate that interfaces with the it.
 
 This overview of the request flow gives a wide angle view:
 
 ![Illustration of the gate communication problem](../images/gate-flow.png)
 
 ### Web Stack
+
+Javascript/HTML front-end with a Ruby back-end.
 
 #### Client: Browser app using Polymer
 
@@ -60,9 +66,9 @@ Rationale: I'm used to it, it's fun. I intially started using NodeJS as I though
 
 ### Hardware
 
-There are two pieces of hardware. An internet gateway located at my house, where I have an internet connection. It relays communications between the internet and the second piece of hardware. The second piece is interfaces with the gate and is located near it.
+There are two hardware modules. An internet gateway located at my house, where I have an internet connection. It relays communications between the internet and the module. The second piece module is located near the gate and interfaces with it.
 
-For both devices I used an embeded OS for firmware. I initially wrote much bare metal code, but I quickly grew curious of what using an embeded OS feels like. I used [Riot-OS](http://www.riot-os.org/) on both. I had to fork it in order to write support for my wizzimote modules and tune resources requirements, [the fork is here](https://github.com/ximus/RIOT/tree/portail-and-wizzimote).
+For both devices I used an embedded OS for firmware. I initially wrote much bare metal code, but I quickly grew curious of what using an embedded OS looks like. I used [Riot-OS](http://www.riot-os.org/) on both. I had to fork it in order to write support for my wizzimote modules and tune resources requirements, [the fork is here](https://github.com/ximus/RIOT/tree/portail-and-wizzimote).
 
 #### Home: Internet Gateway
 ![Illustration of the gate communication problem](../images/gateway-diagram.png)
@@ -105,13 +111,40 @@ Its responsibilities include:
 * Degrade gracefully upon laser obstruction (think car obstructing as it drives through)
 * Degrade gracefully upon laser failure
 
-[Post sample request/responses]
+Both a hardware [RC filter](https://en.wikipedia.org/wiki/RC_circuit) and an [exponentially weighed moving average](http://www.mcgurrin.com/robots/?p=154) are used to sooth gate position readings from the laser. The module incorportates domain knowledge how the gate behaves in order to provide stable status responses when the laser is temporarely obstructed. During the intial one-time setup phase, the gate's average speed is measured allowing the module to detect laser obstruction and estimate gate position.
 
-mention this: decision to embed postion guestimation and obstruction management into sensor node rather providing a friendly, soothed telemetry reading rather than provide a raw reading and have clients work out provide their own gate domain knowledge.
+Communication with the module is done through the [CoAP](http://coap.technology/) protocol. Data is represented using [CBOR](http://cbor.io/). In the final project phases, either message signing or encryption will be added.
 
-TODO:
-* add link: http://www.mcgurrin.com/robots/?p=154
-* add link: http://www.mosaic-industries.com/embedded-systems/microcontroller-projects/measurement-techniques/instrumentation-amplifier-ground-loop-isolator
+##### CoAP GET /gate (observeable)
+requests to the gate status
+response includes a code `s` representing the gate state and the position `p` of the gate represented as a number between 0 and 100.
+
+```
+{
+  s: 2,
+  p: 13
+}
+```
+
+##### CoAP PUT /gate
+used to change the gate's state to open or close it. Parameter `s` represents the status code. Accepteable values for `s` are 1 (open) and 4 (closed).
+
+```
+{
+  s: 4
+}
+```
+
+##### State representations
+
+| code rep | string rep  | note                              |
+| -------- | ----------- | --------------------------------- |
+| 0        | unknown     | state unreadeable, laser offline?
+| 1        | open        |                                   |
+| 2        | opening     |                                   |
+| 3        | open_partly | rare case                         |
+| 4        | closed      |                                   |
+| 5        | closing     |                                   |
 
 
 ## Testing: the mock gate
@@ -133,6 +166,7 @@ I gathered the following parts:
 ## Notes on learning electronics
 * Negative to ground?
 * http://microrobotics.co.uk/doc/pdf/D003_4-20mA_Inputs_App_Note.pdf
+* http://www.mosaic-industries.com/embedded-systems/microcontroller-projects/measurement-techniques/instrumentation-amplifier-ground-loop-isolator
 * oscilloscope use was cruicial for certitude, productivity
 
 
@@ -154,7 +188,7 @@ I gathered the following parts:
 ## Assembly
 Access to a workshop helped, pictures are the best record, [see below](#photos).
 
-## Notes on learning firmware development
+## [WIP][spin this] Notes on learning firmware development
 http://homepages.inf.ed.ac.uk/dts/pm/Papers/nasa-c-style.pdf
 
 ## [WIP][spin this] Notes on using the xport
