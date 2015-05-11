@@ -7,7 +7,7 @@ gem "guard-nanoc"
 gem "nanoc"
 
 gem "nutils"
-gem "nanoc-cachebuster"
+gem "nanoc-cachebuster", github: "ximus/nanoc-cachebuster", branch: "develop"
 
 gem "sass"
 gem "compass"

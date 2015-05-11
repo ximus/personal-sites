@@ -10,7 +10,7 @@ Compass.add_project_configuration 'compass/config.rb'
 Sass::Engine::DEFAULT_OPTIONS = Sass::Engine::DEFAULT_OPTIONS.dup.merge(Compass.sass_engine_options)
 
 
-compile /vendor|stylesheets/ do
+compile /stylesheets/ do
   if !item.binary?
     if item[:extension].end_with? 'css'
       filter :sass
@@ -29,10 +29,6 @@ end
 
 compile '/robots/' do
 end
-
-# compile '*.md' do
-#   filter :kramdown
-# end
 
 compile '*' do
   if !item.binary?

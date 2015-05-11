@@ -247,7 +247,9 @@ h1, h2, h3 {
 	font-weight: 600; }
 
 h2 { font-size: 1.5em; }
-h3 { margin-top: 0; }
+h3 {
+	margin-top: 1.2em;
+	margin-bottom: 1em; }
 
 // back to top
 h2 > a.top {
@@ -276,7 +278,7 @@ section > section:last-child { margin-bottom: 0; }
 
 #container {
 	@include container;
-	@include single-box-shadow(#8d8d8d, 0, 0, 14px);
+	@include single-box-shadow(#c4c4c4, 0, 0, 16px);
 	background: white url(../images/get-in-touch.gif) no-repeat 100% 0;
 	padding: 14px 44px;
 	margin: 60px auto;
@@ -332,6 +334,8 @@ footer {
 	@include column(24, true); }
 
 #skills {
+	h3:first-child {
+		margin-top: 0; }
 	div {
 		@include column(10, true); }
 	div.first {
@@ -448,7 +452,7 @@ footer {
 	z-index: 20;
 	border-bottom: 1px solid #aaa;
 	background: white;
-	@include single-box-shadow(#8d8d8d, 0, 0, 8px);
+	@include single-box-shadow(#c4c4c4, 0, 0, 12px);
 	padding: 10px 12px;
 	@include opacity(0.9);
 	@include single-transition(opacity, 200ms, ease-in-out);
@@ -536,9 +540,9 @@ footer {
 
 @media print {
   *:not(.star) { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a[href]:after {
-		font-size: 87%;
-		content: " (" attr(href) ")"; }
+  // a[href]:after {
+		// font-size: 87%;
+		// content: " (" attr(href) ")"; }
 	a, a:visited { text-decoration: none; }
   abbr[title]:after { content: " (" attr(title) ")"; }
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
