@@ -34,7 +34,15 @@ compile '*' do
   if !item.binary?
     filter :erubis
     if item[:extension] == 'md'
-      filter :kramdown, parse_block_html: true
+      filter :kramdown, {
+        parse_block_html: true,
+        syntax_highlighter: 'coderay',
+        syntax_highlighter_opts: {
+          block: {
+            line_numbers: false
+          }
+        }
+      }
     end
     if ['html', 'md'].include? item[:extension]
       layout 'notes'

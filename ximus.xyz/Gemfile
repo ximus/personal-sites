@@ -21,6 +21,7 @@ gem "nokogiri"
 gem "oga"
 gem "erubis"
 gem "kramdown"
+gem "coderay"
 gem "builder"
 gem "htmlbeautifier"
 

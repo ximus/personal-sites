@@ -120,6 +120,7 @@ DEPENDENCIES
   activesupport
   autoprefixer-rails
   builder
+  coderay
   coffee-script
   compass
   compass-blueprint
