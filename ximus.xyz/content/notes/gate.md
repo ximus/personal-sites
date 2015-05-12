@@ -117,6 +117,11 @@ I decided to switch over to Riot:
 In hindsight I wish I had selected modules more powerful than wizzimotes. Though they were fun, their resources are very limited and designed for ultra-low power applications, whereas I'm plugging in to the power grid.
 </div>
 
+##### XPort
+The XPort runs [µClinux](http://www.uclinux.org/). Lantronix provides an SDK with sample applications. One of the applications is a UART to TCP/UDP bridge. I based my gateway off this app and made modifications. I will have to extract a patch from this work and commit it to source control. Most of my development of this device happened through a vagrant virtual machine.
+
+[video note](https://www.youtube.com/watch?v=Wuvfb7PI8j4)
+
 #### Gate: Control and Observation
 
 ![Illustration of the gate communication problem](../images/gate-diagram.png)
