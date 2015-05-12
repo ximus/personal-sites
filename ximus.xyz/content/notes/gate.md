@@ -76,6 +76,8 @@ Polymer still has some edges to round but it is a solid base and I am pleased to
 
 I should have just used [Rails](http://rubyonrails.org/). But I was curious to understand exactly what are the required parts of a web framework, so I wrote a custom stack. I am please with the end result, it isn't too complicated and it was educative.
 
+The database is [SQLite](https://sqlite.org/).
+
 <div class="side-note">
 Why Ruby? I'm used to it, it's fun. Initially, I started using NodeJS as I thought some companies would appriciate that on my resume. I moved forward with not just one, but a few different NodeJS web frameworks. However I backed away from NodeJS frameworks after getting sick of having to implement my own plumbing too often. Javascript is fun in the browser but I prefer Ruby's syntax and ecosystem on the server by far.
 </div>
@@ -138,22 +140,22 @@ Communication with the module is done through the [CoAP](http://coap.technology/
 requests to the gate status
 response includes a code `s` representing the gate state and the position `p` of the gate represented as a number between 0 and 100.
 
-```
+~~~ javascript
 {
-  s: 2,
-  p: 13
+  s: 2,  // state id
+  p: 13  // position 0-100
 }
-```
+~~~
 
 ##### CoAP PUT /gate
 
 used to change the gate's state to open or close it. Parameter `s` represents the status code. Accepteable values for `s` are 1 (open) and 4 (closed).
 
-```
+~~~ javascript
 {
-  s: 4
+  s: 4 // state id 2 or 4
 }
-```
+~~~
 
 ##### State representations
 
