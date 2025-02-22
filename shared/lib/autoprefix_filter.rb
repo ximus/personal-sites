@@ -1,4 +1,4 @@
-class AutoprefixWheel < Nanoc3::Filter
+class AutoprefixWheel < Nanoc::Filter
 
   identifier :autoprefix
   type :text

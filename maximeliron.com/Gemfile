@@ -6,10 +6,9 @@ gem "rb-fsevent"
 gem "guard-nanoc"
 gem "nanoc"
 
-gem "nutils"
 gem "nanoc-cachebuster", github: "ximus/nanoc-cachebuster", branch: "develop"
 
-gem "sass"
+gem "sass", require: false
 gem "compass"
 gem 'compass-blueprint'
 gem 'compass-normalize'
@@ -19,3 +18,5 @@ gem "sprockets"
 gem "nokogiri"
 gem "erubis"
 gem "kramdown"
+
+gem 'pry'

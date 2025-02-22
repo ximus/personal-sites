@@ -1,6 +1,6 @@
 require 'coffee-script'
 
-class CoffeeFilter < Nanoc3::Filter
+class CoffeeFilter < Nanoc::Filter
   identifier :coffee
 
   def run(content, params = {})

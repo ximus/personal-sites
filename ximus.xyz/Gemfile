@@ -7,7 +7,6 @@ gem "activesupport"
 gem "guard-nanoc"
 gem "nanoc"
 
-gem "nutils"
 gem "nanoc-cachebuster"
 
 gem "sass"

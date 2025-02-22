@@ -1,4 +1,4 @@
-class SprocketWheel < Nanoc3::Filter
+class SprocketWheel < Nanoc::Filter
 
   identifier :sprockets
   type :text
@@ -31,15 +31,16 @@ class SprocketWheel < Nanoc3::Filter
     # Get the Sprockets BundledAsset object for the item
     asset = env.find_asset(filename)
 
+    # this just doesn't work anymore in modern sprockets
     # Make sure sure the item is recompiled if a depended asset is dirty!
     # Gather dependent items
-    item_dependencies = asset.dependencies.collect do |asset_dep|
-      # Find its corresponding Nanoc item.
-      imported_filename_to_item(asset_dep.pathname)
-    end
+    # item_dependencies = asset.dependencies.collect do |asset_dep|
+    #   # Find its corresponding Nanoc item.
+    #   imported_filename_to_item(asset_dep.pathname)
+    # end
 
     # Register them as dependendcies with Nanoc
-    depend_on(item_dependencies)
+    # depend_on(item_dependencies)
 
     # Output compiled asset
     asset.to_s

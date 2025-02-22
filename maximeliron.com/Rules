@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 # upgrading to nanoc4 will simplify alot of this
+# ^ I have but I can't tell how anymore
 
 require 'compass'
 require 'nanoc/helpers/filtering'
@@ -8,7 +9,10 @@ require 'nanoc/helpers/filtering'
 # Need this for Compass to work
 Compass.add_project_configuration 'compass/config.rb'
 Sass::Engine::DEFAULT_OPTIONS = Sass::Engine::DEFAULT_OPTIONS.dup.merge(Compass.sass_engine_options)
+Sass.load_paths.concat(Compass.sass_engine_options[:load_paths])
 
+# it's trying to run bun for some reason, forcing here
+ExecJS.runtime = ExecJS::Runtimes::Node
 
 compile /stylesheets/ do
   if !item.binary?
@@ -20,42 +24,42 @@ compile /stylesheets/ do
   end
 end
 
-compile '/javascripts/main/' do
-  filter :sprockets
+compile '/javascripts/main.*' do
+  filter :coffeescript
 end
 
-compile '/javascripts/*/' do
+compile '/javascripts/*' do
 end
 
-compile '/robots/' do
+compile '/robots.txt' do
 end
 
-compile '*' do
+compile '/**/*' do
   if !item.binary?
     filter :erubis
     if item[:extension] == 'md'
       filter :kramdown
     end
     if ['html', 'md'].include? item[:extension]
-      layout item[:layout] || 'default'
+      layout item[:layout] || '/default.*'
       # filter :relativize_paths, type: :html
     end
     filter :cache_buster
   end
 end
 
-route '/stylesheets/*/' do
-  item.identifier.chop + fingerprint(item[:filename]) + '.css'
+route '/stylesheets/*' do
+  item.identifier.without_ext + fingerprint(item[:filename]) + '.css'
 end
 
 route '/javascripts/*' do
   if !item.binary?
-    item.identifier.chop + fingerprint(item[:filename]) + '.js'
+    item.identifier.without_ext + fingerprint(item[:filename]) + '.js'
   end
 end
 
 # Just copy the rest over
-route '*' do
+route '/**/*' do
   if item[:content_filename]
     path = item[:content_filename].gsub(/^content/, '')
 
@@ -67,4 +71,4 @@ route '*' do
   end
 end
 
-layout '*', :erb
+layout '/**/*', :erb
