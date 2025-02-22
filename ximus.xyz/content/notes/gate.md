@@ -238,6 +238,7 @@ http://homepages.inf.ed.ac.uk/dts/pm/Papers/nasa-c-style.pdf
 * shows histogram screenshots, console
 * mention ruby xport tests
 * mention polymer was a more consistent, solid dev experience compared to angular. Less hacking about, less missed expections, less digging into the bowels of the beast and reading documentation, less abstract concepts
+* gateway should pass full UDP packets to gate node and back. It should pass any IP packet that matches UDP and UDP.port == host port. This makes more sense (less complexity) and solves the issue of replying to the originating remote host port.
 
 ## Photos
 There was some photographic record, [check it out](https://picasaweb.google.com/104618138749013524886/GateProject?authuser=0&feat=directlink)

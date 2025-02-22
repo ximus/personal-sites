@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
-  <title><%= @item[:title] %></title>
+  <title>
+    <%= @item[:title] %>
+  </title>
 
   <!-- Twitter Card data -->
   <meta name="twitter:site" content="@ximus">
@@ -20,7 +23,7 @@
 
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-  <%= render 'common/head'  %>
+  <%= render '/common/head.*' %>
 </head>
 
 <body>
@@ -29,6 +32,7 @@
     <%= yield %>
   </div>
 
-  <%= render 'footer'  %>
+  <%= render '/footer.*' %>
 </body>
+
 </html>
