@@ -1,0 +1,95 @@
+main:
+  -
+    title: Back-end Services Integration
+    client_name: Crosscall
+    client_url: http://crosscall.com/en/
+    contact_with: Engineering
+    description: "Created an internal app to bridge Zendesk, a 3rd party contractor and their internal support team."
+    tools: "Ruby, various web APIs"
+    date: 2014
+  -
+    title: Senior Software Engineer
+    client_name: Rearden Commerce, Homerun.com
+    client_url: http://www.deem.com/
+    contact_with: VP of Analytics, Offers engineering team, Offers product team
+    description: "Core participation in a lean e-commerce engineering team (payments, analytics, email, front-end and back-end). Learned to use data and analytics to drive decision making. Regularly participated in product development. Partner relationships with industry heavyweights. Started as junior engineer but was promptly promoted."
+    tools: "Ruby, Hadoop, Postfix, HTML/CSS, Javascript, Coffeescript, SASS"
+    started_in: 2012
+    finished_in: 2013
+  -
+    title: Mobile Web App Design
+    client_name: Blurt
+    client_url: http://www.blurt.net/
+    contact_with: Founder
+    description: "Created a consumer oriented mobile app for mobile commerce. Used the latest techniques in CSS3 animation and touch functionality. Learned how to deal with the constraints of mobile devices."
+    tools: "HTML/CSS, Javascript, Coffeescript, SASS"
+    date: 2011
+  -
+    title: Web Design
+    client_name: Love the World
+    client_url: http://www.lovetheworld.com/
+    contact_with: Head of communications
+    description: Implemented a CO<sub>2</sub> module to enable visitors to measure their country's CO<sub>2</sub> footprint
+    tools: "HTML/CSS, Javascript, RaphaelJS (SVG framework)"
+    date: 2011
+  -
+    title: Data Visualization Design
+    client_name: Qualinetwork
+    client_url: http://www.qualinetwork.com/
+    contact_with: Founder and CEO
+    description: "Designed and implemented a visual graphs to visualize customer feedback for products sold through e-commerce"
+    tools: "HTML/CSS, Actionscript"
+    date: 2011
+  -
+    title: Web Application Design
+    client_name: MD Architecture
+    contact_with: CEO
+    description: Designed and implemented a muti-user online file sharing platform for the construction of a large High School. The platform includes complex authorization and roles model, and basic email sharing capabilities.
+    tools: "HTML/CSS, Ruby on Rails"
+    date: 2011
+  -
+    title: Web Application Design
+    client_name: Modenature (construction)
+    client_url: http://www.modenature.pro/
+    contact_with: CEO
+    description: "A major learning experience. Built a collaborative web application to enable the sales team to work (much) more efficiently. Reception by users was great."
+    tools: "Adobe Air, Flex (Actionscript framework), Ruby"
+    date: 2009
+  -
+    title: Web Design
+    client_name: Scalr
+    client_url: http://wwww.scalr.net/
+    contact_with: Founder and CEO
+    description: "Participated in the branding thought process, recorded screencasts, designed the web site. Gave me a strong understanding of cloud computing"
+    tools: "HTML/CSS, Illustrator, Photoshop, Mindtouch (wiki platform), Camtasia Studio (screencast recording)"
+    date: 2009
+  -
+    title: Web Marketing
+    client_name: Bazile Telecom
+    client_url: http://www.bazile.fr/
+    contact_with: CEO, Marketing Manager
+    description: Designed and implemented an small interactive client-side app so people could better understand the client's product.
+    tools: "HTML/CSS, Actionscript, Illustrator, Photoshop"
+    date: 2008
+  -
+    title: Intern
+    client_name: NuGraphic
+    contact_with: CEO
+    description: My stepping stone into the web. Learned the basics of the web from some of the best (now working for Zynga). Participated in web design, branding, web strategy and e-commerce works.
+    tools: "HTML/CSS, Javascript, PHP, Illustrator, Photoshop"
+    started_in: 2007
+    finished_in: 2008
+
+various_sites:
+  -
+    url: forgedemontolieu.com
+    description: "Bed & Breakfast in the south of France"
+  -
+    url: lalettrevolee.fr
+    description: "Local bookshop"
+  -
+    url: francoisecullet.com
+    description: "Artist in the south of France, earlier work"
+  -
+    url: oliviadegasquet.com
+    description: "Another Artist, earlier work"

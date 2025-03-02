@@ -1,6 +1,7 @@
 .DS_Store
 /tmp
 .sass-cache
-/output
+output/**/*
 /.bundle
 crash.log
+node_modules/

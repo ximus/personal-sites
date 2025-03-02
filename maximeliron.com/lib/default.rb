@@ -4,7 +4,6 @@ require "pry"
 require "erubis"
 require "nokogiri"
 require "yaml"
-pp $:
 require 'nanoc/cachebuster'
 
 Dir["../shared/lib/*"].each { |path| require path }

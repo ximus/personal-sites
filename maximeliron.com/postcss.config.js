@@ -1,0 +1,10 @@
+module.exports = {
+  syntax: "postcss-scss",
+  plugins: {
+    "postcss-strip-inline-comments": {},
+    "postcss-simple-vars": {},
+    "postcss-nested-vars": {},
+    "@tailwindcss/postcss": {},
+    "@tailwindcss/nesting": {},
+  },
+};

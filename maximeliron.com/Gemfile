@@ -3,10 +3,11 @@ source "https://rubygems.org"
 
 
 gem "rb-fsevent"
-gem "guard-nanoc"
+gem 'nanoc-live'
 gem "nanoc"
-
 gem "nanoc-cachebuster", github: "ximus/nanoc-cachebuster", branch: "develop"
+
+gem "tailwindcss-ruby"
 
 gem "sass", require: false
 gem "compass"
