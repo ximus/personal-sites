@@ -24,7 +24,7 @@ compile /stylesheets/ do
   filter :relativize_paths, type: :css
 end
 
-compile '/javascripts/main.*' do
+compile '/javascripts/*.coffee' do
   filter :coffeescript
 end
 
@@ -41,6 +41,7 @@ compile '/**/*' do
       filter :kramdown
     end
     if ['html', 'md'].include? item[:extension]
+      filter :image_snap
       layout item[:layout] || '/default.*'
       # filter :relativize_paths, type: :html
     end

@@ -27,13 +27,13 @@
 </head>
 
 <body class="flex flex-col">
-  <div id="container" role="main">
-    <%= content_for(@item, :pre) %>
-      <div class="paper">
-        <%= yield %>
-      </div>
-      <%= render '/footer.*' %>
-  </div>
+  <%= content_for(@item, :pre) %>
+
+    <div id="container" role="main">
+      <%= yield %>
+    </div>
+
+    <%= render '/footer.*' %>
 </body>
 
 </html>

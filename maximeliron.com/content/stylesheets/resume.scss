@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-$alternating-color: #f5f1e2;
+$alternating-color: #fffbec;
 
 $stronger-text-color: black;
 $normal-text-color: #4a4a4a;
@@ -63,12 +63,18 @@ section > section:last-child {
   margin-bottom: 0;
 }
 
+section > h2 {
+  padding-bottom: 5px;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #dbdbdb;
+}
+
 .inline-list {
   @apply flex flex-row items-start flex-wrap;
   $left_margin: 5px;
   margin-left: -$left_margin;
-
   list-style-type: none;
+
   padding-left: 0;
   li {
     @apply font-medium text-sm;
@@ -81,17 +87,32 @@ section > section:last-child {
   }
 }
 
+.with-bullets {
+  @apply pl-4;
+  list-style-type: disc;
+}
+
+.pre {
+  @apply self-end mt-4 sm:mt-8 mb-4 px-3 sm:px-0;
+  @apply text-sm;
+  @apply opacity-80 hover:opacity-100 transition-opacity;
+}
+
 #container {
+  margin: 0 auto;
+  @apply max-w-4xl w-full;
+  @apply flex flex-col;
+}
+
+.paper {
+  @apply px-4 py-2 sm:px-12 sm:py-6;
   box-shadow: 0 0 16px #c4c4c4;
-  margin: 60px auto;
-  z-index: 100;
-  @apply px-4 py-2;
-  @apply w-full max-w-4xl;
+  @apply bg-white rounded-sm;
 }
 
 header {
   h1 {
-    @apply text-3xl;
+    @apply text-4xl;
     margin-bottom: 0.1em;
   }
   h2 {
@@ -106,15 +127,13 @@ header {
   }
 }
 
-section > h2 {
-  padding-bottom: 5px;
-  margin-bottom: 1em;
-  border-bottom: 1px solid #dbdbdb;
+.header-section {
+  @apply mt-6 mb-12 flex flex-col sm:flex-row justify-between sm:items-end;
 }
 
 #contact {
   @apply text-sm;
-  @apply mt-5;
+  @apply mt-5 sm:mt-0;
 
   li {
     margin-bottom: 4px;
@@ -135,6 +154,12 @@ section > h2 {
   p {
     text-align: justify;
   }
+  img {
+    @apply h-3 m-px;
+    @apply inline-block;
+    opacity: 0.7;
+    vertical-align: baseline;
+  }
 }
 
 p + p {
@@ -151,36 +176,30 @@ footer {
 }
 
 #skills {
-  & > div {
-    display: flex;
-    flex-direction: row;
-    justify-items: stretch;
-    align-items: stretch;
+  @apply flex flex-col sm:flex-row items-stretch sm:justify-stretch gap-4 sm:gap-5 mt-2 mb-6 sm:mb-2;
 
-    & > div {
-      padding: 1em 2em;
-      &:first-of-type {
-        padding-left: 0;
-        border-right: 1px solid #dbdbdb;
-      }
-      &:last-of-type {
-        padding-right: 0;
-      }
-    }
+  .vr {
+    @apply mt-[2%] mb-[2%] bg-gray-200 w-px hidden sm:block;
+  }
+
+  & > div:not(.vr) {
+    flex: 1;
   }
   h3:first-child {
     margin-top: 0;
   }
-}
-
-#projects {
-  ul {
-    padding-left: 0;
+  a {
+    @apply flex flex-row items-center gap-2;
+  }
+  a img {
+    @apply h-4 w-4;
   }
 }
 
 li.past-project {
-  @apply px-4 py-2 mb-4;
+  @apply px-4 py-2 mb-4 sm:px-5 sm:py-3;
+  @apply flex flex-col justify-stretch;
+
   border-radius: 4px;
   list-style-type: none;
 
@@ -192,11 +211,14 @@ li.past-project {
   p.client,
   p.period {
     margin: 0;
-    display: inline;
   }
-  p.description {
-    margin-bottom: 0;
-    text-align: justify;
+
+  .title-client-period {
+    @apply w-full flex flex-row items-start content-start sm:items-center  justify-between;
+  }
+
+  .title-client {
+    @apply flex flex-col sm:flex-row items-start sm:items-center;
   }
 
   p.contact,
@@ -210,16 +232,14 @@ li.past-project {
     }
   }
 
-  p.contact {
-    margin-top: 0.6em;
+  h3 {
+    @apply inline-block sm:text-lg;
+    @apply sm:pr-3 sm:mr-3 sm:border-r border-gray-400;
   }
 
-  h3 {
-    @apply sm:text-lg;
-    padding-right: 12px;
-    border-right: 1px solid $lighter-text-color;
-  }
   p.client {
+    @apply inline-flex flex-row items-center content-center gap-1;
+
     font-weight: 600;
     color: $lighter-text-color;
     a,
@@ -227,40 +247,24 @@ li.past-project {
     a:visited {
       color: $lighter-text-color;
     }
-    margin-left: 12px;
+    img {
+      @apply w-4 h-4;
+    }
   }
 
   p.period {
-    float: right;
+    @apply font-medium text-sm text-gray-500 mt-1 sm:justify-self-end;
   }
 }
 
-#other-sites {
-  margin-top: 26px;
-  li {
-    padding: 7px 26px;
-    list-style-type: none;
-    border-radius: 4px;
-    &:nth-child(2n + 1) {
-      background-color: $alternating-color;
-    }
-    a,
-    p {
-      display: inline;
-      float: left;
-    }
-    a {
-      font-weight: 600;
-      width: 150px;
-    }
-    p {
-      margin: 0 12px;
-    }
-  }
+#projects .points-list {
+  @apply mt-1;
+  @apply text-sm;
 }
 
 footer {
   @apply text-sm;
+  @apply mt-6 mb-12 px-1 sm:p-0;
 
   img {
     float: right;
@@ -277,24 +281,25 @@ footer {
 }
 
 #toc {
+  visibility: hidden;
   position: fixed;
-  @apply flex flex-row px-2 py-3;
   top: 0;
   left: 0;
   right: 0;
   z-index: 20;
   border-bottom: 1px solid #aaa;
   background: white;
-
   box-shadow: #c4c4c4 0 0 12px;
   opacity: 0.9;
   transition: opacity 200ms ease-in-out;
-  a:hover {
-    text-decoration: none;
+
+  @apply flex flex-row justify-center;
+
+  & > div {
+    @apply max-w-4xl w-full;
+    @apply flex flex-row py-3 mx-2;
   }
-  .pdf-link {
-    align-self: flex-end;
-  }
+
   ul {
     @apply flex flex-row gap-2;
     @apply px-0;
@@ -310,9 +315,6 @@ footer {
 #toc:hover,
 #toc.showing {
   opacity: 1;
-}
-
-@media only screen and (min-width: $blueprint-container-size) {
 }
 
 @media only screen and (min-width: 1100px) {
@@ -359,6 +361,10 @@ footer {
 }
 .ir br {
   display: none;
+}
+
+em {
+  @apply font-medium;
 }
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
@@ -452,15 +458,12 @@ footer {
   }
   #projects {
     position: relative;
-    page-break-before: always;
-    page-break-inside: avoid;
   }
   li.past-project,
   #other-sites li {
     padding-right: 0 !important;
     padding-left: 0 !important;
     position: relative;
-    page-break-before: always;
     page-break-inside: avoid;
   }
   h2 > a.top {

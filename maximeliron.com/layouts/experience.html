@@ -1,24 +1,49 @@
 <li class="past-project">
-  <h3><%= @title %></h3>
-  <p class="client"><%= @client_url ? link_to(@client_name, @client_url, :target => "_blank") : @client_name %></p>
 
-  <p class="period">
-    <%= @date || "#{@started_in} -  #{@finished_in}" %>
-  </p>
+  <div class="title-client-period">
+    <div class="title-client">
+      <h3>
+        <%= @title %>
+      </h3>
+
+      <p class="client">
+        <% if @client_image %>
+          <img src="<%= @client_image %>" alt="" />
+          <% end %>
+            <%= @client_url ? link_to(@client_name, @client_url, :target=>
+              "_blank") : @client_name %>
+      </p>
+    </div>
+
+    <p class="period">
+      <%= @date || "#{@started_in} - #{@finished_in}" %>
+    </p>
+  </div>
+
 
   <% if @contact_with %>
     <p class="contact">
-      <span class="label">contact with:</span> <%= @contact_with %>
+      <span class="label">contact with:</span>
+      <%= @contact_with %>
     </p>
-  <% end %>
+    <% end %>
+      <% if @tools %>
+        <p class="tools"><span class="label">tools used:</span>
+          <%= @tools %>
+        </p>
+        <% end %>
 
-  <% if @tools %>
-    <p class="tools">
-      <span class="label">tools used:</span> <%= @tools %>
-    </p>
-  <% end %>
+          <p class="description">
+            <%= @description %>
+          </p>
 
-  <p class="description">
-    <%= @description %>
-  </p>
+          <% if @points&.any? %>
+            <ul class="points-list with-bullets">
+              <% @points.each do |point| %>
+                <li>
+                  <%= point %>
+                </li>
+                <% end %>
+            </ul>
+            <% end %>
 </li>

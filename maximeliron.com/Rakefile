@@ -1,16 +1,34 @@
+require 'pry'
+
 import "../shared/tasks.rake"
 
 task :deploy => [
   'compile:pdf_resume',
   'optimize:jpeg',
   'optimize:png',
-  'optimize:css',
-  'optimize:js']
+  # 'optimize:css',
+  # 'optimize:js',
+]
 
 namespace :compile do
   desc "Generates the pdf version of my resume"
   task :pdf_resume do
-    # puts `bundle exec wkpdf -t 10000 --stylesheet-media print  -n --caching false -m 52  --source output/resume/index.html --output output/resume/maxime-liron-resume.pdf`
-    puts `wkhtmltopdf --print-media-type output/resume/index.html output/resume/maxime-liron-resume.pdf`
+    require 'puppeteer-ruby'
+    require 'webrick'
+
+    Puppeteer.launch(headless: true) do |browser|
+      server = WEBrick::HTTPServer.new DocumentRoot: "output", Port: 0
+      Thread.new { server.start }
+      page = browser.new_page
+      {
+        "resume/index.html" => "maxime-liron-resume.pdf",
+        "resume-old/index.html" => "maxime-liron-resume-old.pdf",
+      }.each do |from, to|
+        page.goto("http://localhost:#{server.config[:Port]}/#{from}")
+        page.pdf(path: "output/#{to}")
+      end
+      page.close
+      server.shutdown
+    end
   end
 end

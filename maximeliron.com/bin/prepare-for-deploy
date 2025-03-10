@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+bundle exec nanoc compile
+bundle exec rake compile:pdf_resume

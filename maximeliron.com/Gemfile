@@ -19,5 +19,12 @@ gem "sprockets"
 gem "nokogiri"
 gem "erubis"
 gem "kramdown"
+gem 'nokolexbor'
+gem 'open-uri'
+
+# pdf
+gem 'puppeteer-ruby'
+gem 'webrick'
 
 gem 'pry'
+gem 'rake'

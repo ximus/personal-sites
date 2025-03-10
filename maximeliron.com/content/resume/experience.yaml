@@ -1,21 +1,41 @@
 main:
   - title: Product Engineer
     client_name: Gerard
+    client_image: /images/gerard.png
     description: "Small to medium farm management platform for sales, billing and deliveries."
-    tools: "Svelte, Rails, GRPC"
+    tools: "Svelte, Rails, gRPC, Kubernetes, Envoy, Playwright    "
     started_in: 2021
     finished_in: 2024
-  - title: Product &rarr; Staff Engineer
+    points:
+      - Designed and built a farm management platform from the ground up
+      - Crafted an extensive UI component library, provided a polished UI
+      - Built a wide range of business functionality
+      - Managed a small deployement using Docker Swarm then k3s
+  - title: Product <span class="text-gray-400">&rarr;</span> Staff Engineer
     client_name: Kiavi
     client_url: https://www.kiavi.com/
+    client_image: https://www.kiavi.com/hubfs/static/manifest/favicon.svg
     description: "Premier fintech platform for real estate investors."
-    tools: "Ruby, Rails, React, Redux"
+    tools: "Ruby, Rails, React, Redux, Postgres, Capybara"
     started_in: 2015
     finished_in: 2020
-  - title: Senior Engineer
+    points:
+      - Founding team engineer of business unit, longest serving
+      - Grew to $5B of loans managed
+      - Crafted extensive back office and consumer tools
+      - Architected components spanning multiple system layers and business segments
+      - Managed an in-house banking abstraction layer, movey movement flows
+      - Maintained close working relationships with design and product teams
+  - title: Junior <span class="text-gray-400">&rarr;</span> Senior Engineer
     client_name: Deem
     client_url: https://www.deem.com/
-    description: "Core participation in a lean e-commerce engineering team (payments, analytics, email, front-end and back-end). Learned to use data and analytics to drive decision making. Regularly participated in product development. Partner relationships with industry heavyweights. Started as junior engineer but was promptly promoted."
-    tools: "Ruby, Hadoop, Postfix, Javascript, Coffeescript, SASS"
+    client_image: https://cdn.prod.website-files.com/5ea9f73dd4570f8252fa8cf4/63d9414f1697b8864bfd706f_favicon32x32.png
+    description: Groupon-era white label deals and offers platform.
+    tools: "Ruby, Hadoop, Redis, Mysql, Postfix, Coffeescript, SASS"
     started_in: 2012
     finished_in: 2013
+    points:
+      - Operationalized map reduce algorithims for consumer targetting, A/B testing
+      - Oversaw the daily dispatching of email to 6+ million users
+      - Developped, maintained a white label web platform used by fortune 500
+      - Core participation in a lean e-commerce engineering team (payments, analytics, email, front-end and back-end)

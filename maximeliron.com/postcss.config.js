@@ -4,7 +4,8 @@ module.exports = {
     "postcss-strip-inline-comments": {},
     "postcss-simple-vars": {},
     "postcss-nested-vars": {},
-    "@tailwindcss/postcss": {},
+    "postcss-extend-rule": {}, // doesn't work
     "@tailwindcss/nesting": {},
+    "@tailwindcss/postcss": {},
   },
 };

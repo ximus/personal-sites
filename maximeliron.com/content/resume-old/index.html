@@ -2,14 +2,14 @@
 title: Maxime Liron's Old Resume
 description: Web swiss army knife, general technologist
 image: "http://www.maximeliron.com/images/me.png"
-layout: /profile.*
+layout: /profile-old.*
 ---
 <% content_for :header do %>
   <link rel="stylesheet" href="../stylesheets/resume-old.css">
   <% end %>
 
     <% content_for :footer do %>
-      <script src="../javascripts/main.js" defer></script>
+      <script src="../javascripts/main-old.js" defer></script>
       <% end %>
 
         <header>
@@ -37,7 +37,7 @@ layout: /profile.*
               <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
-          <a href="maxime-liron-resume.pdf" class="with-icon pdf-link" target="_blank">PDF Version</a>
+          <a href="/maxime-liron-resume-old.pdf" class="with-icon pdf-link" target="_blank">PDF Version</a>
         </aside>
 
         <section id="contact">
@@ -211,7 +211,7 @@ layout: /profile.*
             <h2>Past Projects</h2>
             <ul>
               <% for experience in experience_list('old') %>
-                <%= render '/experience.*' , experience %>
+                <%= render '/experience-old.*' , experience %>
                   <% end %>
             </ul>
 
@@ -303,8 +303,8 @@ layout: /profile.*
               title="HTML5 Powered with CSS3 / Styling, and Semantics">
           </a>
           <p>
-            last modified: <%= Time.now.strftime("%m/%d/%Y") %> -- work in progress, suggestions <a
-                href="mailto:&#109;&#097;&#120;&#105;&#109;&#101;&#108;&#105;&#114;&#111;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">welcomed</a>
+            last modified: 2015 -- work in progress, suggestions <a
+              href="mailto:&#109;&#097;&#120;&#105;&#109;&#101;&#108;&#105;&#114;&#111;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">welcomed</a>
           </p>
           <p>
             built using: <a href="http://sass-lang.com/" target="blank">Sass</a>, <a
@@ -315,6 +315,6 @@ layout: /profile.*
           </p>
           <p>
             <a href="https://github.com/ximus/maximeliron.com" target="blank">Source on Github</a> | <a
-              href="maxime-liron-resume.pdf">Download this as a PDF</a>
+              href="/">Download this as a PDF</a>
           </p>
         </footer>
