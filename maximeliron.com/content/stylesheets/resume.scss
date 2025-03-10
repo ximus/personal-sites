@@ -55,8 +55,8 @@ h2 > a.top {
   padding-top: 8px;
 }
 
-article > section {
-  margin-bottom: 28px;
+article section + section {
+  @apply mt-6;
 }
 
 section > section:last-child {
@@ -179,7 +179,7 @@ footer {
 }
 
 #skills {
-  @apply flex flex-col sm:flex-row items-stretch sm:justify-stretch gap-4 sm:gap-5 mt-2 mb-6 sm:mb-2;
+  @apply flex flex-col sm:flex-row items-stretch sm:justify-stretch gap-4 sm:gap-5 mb-6 sm:mb-2;
 
   .vr {
     @apply mt-[2%] mb-[2%] bg-gray-200 w-px hidden sm:block;
