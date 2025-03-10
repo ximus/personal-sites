@@ -6,199 +6,241 @@ layout: /profile.*
 ---
 
 <% content_for :header do %>
-  <link rel="stylesheet" href="<%= @items['/stylesheets/resume.*'].path %>" />
-  <% end %>
-    <% content_for :pre do %>
-      <aside class="pre no-print">
-        <a href="/maxime-liron-resume.pdf" class="with-icon pdf-link" target="_blank">PDF</a>
-      </aside>
-      <% end %>
+<link rel="stylesheet" href="<%= @items['/stylesheets/resume.*'].path %>" />
+<% end %> <% content_for :pre do %>
+<aside class="pre no-print">
+  <a href="/maxime-liron-resume.pdf" class="with-icon pdf-link" target="_blank"
+    >PDF</a
+  >
+</aside>
+<% end %>
 
-        <div class="header-section">
-          <header>
-            <h1>Maxime Liron</h1>
-            <h2 class="mr-2 flex flex-row items-center">
-              <img class="mr-2 h-5 w-5" src="../images/small-html5.png" alt="HTML5 Logo" />
-              Full Stack Developer
-            </h2>
-          </header>
+<div class="header-section">
+  <header>
+    <h1>Maxime Liron</h1>
+    <h2 class="mr-2 flex flex-row items-center">
+      <img
+        class="mr-2 h-5 w-5"
+        src="../images/small-html5.png"
+        alt="HTML5 Logo"
+      />
+      Full Stack Developer
+    </h2>
+  </header>
 
-          <section id="contact">
-            <h2 class="visuallyhidden">Contact</h2>
-            <ul>
-              <li class="email">
-                <h3>Email</h3>
-                <a
-                  href="mailto:&#109;&#097;&#120;&#105;&#109;&#101;&#108;&#105;&#114;&#111;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#109;&#097;&#120;&#105;&#109;&#101;&#108;&#105;&#114;&#111;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
-              </li>
-              <li class="github">
-                <h3>Github</h3>
-                <a href="https://github.com/ximus" target="blank">@ximus</a>
-              </li>
-            </ul>
-          </section>
+  <section id="contact">
+    <h2 class="visuallyhidden">Contact</h2>
+    <ul>
+      <li class="email">
+        <h3>Email</h3>
+        <a
+          href="mailto:&#109;&#097;&#120;&#105;&#109;&#101;&#108;&#105;&#114;&#111;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;"
+          >&#109;&#097;&#120;&#105;&#109;&#101;&#108;&#105;&#114;&#111;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a
+        >
+      </li>
+      <li class="github">
+        <h3>Github</h3>
+        <a href="https://github.com/ximus" target="blank">@ximus</a>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<article>
+  <section id="profile">
+    <h2>Profile</h2>
+    <ul class="with-bullets">
+      <li><em>15+ years</em> of experience working with web systems.</li>
+      <li><em>8 years</em> working for <em>startups in San Francisco</em>.</li>
+      <li>
+        <em>7 years</em> of independent <em>consulting in France</em>, early
+        career.
+      </li>
+      <li>Passionate about <em>user experience</em>, detail oriented.</li>
+      <li>Experienced with all layers in the stack.</li>
+      <li>Currently based in <em>western Canada, PST</em>.</li>
+    </ul>
+    <p>
+      &rarr; Looking for senior positions in either back end or front end, or
+      both
+    </p>
+  </section>
+
+  <section id="skills">
+    <div>
+      <h3>Front</h3>
+      <ul class="inline-list">
+        <li>
+          <a href="https://www.typescriptlang.org/">
+            <img src="https://www.typescriptlang.org/favicon.ico" alt="" />
+            Typescript
+          </a>
+        </li>
+        <li>
+          <a href="https://react.dev/" target="blank">
+            <img src="https://react.dev/favicon.ico" alt="" />React
+          </a>
+        </li>
+        <li>
+          <a href="https://svelte.dev/" target="blank">
+            <img src="https://svelte.dev/favicon.png" alt="" />
+            Svelte
+          </a>
+        </li>
+        <li>
+          <a href="https://playwright.dev/" target="blank">
+            <img src="https://playwright.dev/img/playwright-logo.svg" alt="" />
+            Playwright
+          </a>
+        </li>
+        <li>
+          <a href="https://storybook.js.org/" target="blank">
+            <img src="https://storybook.js.org/icon.svg" alt="" />
+            Storybook
+          </a>
+        </li>
+        <li>
+          <a href="https://tailwindcss.com/" target="blank">
+            <img src="https://tailwindcss.com/favicon.ico" alt="" />
+            Tailwind
+          </a>
+        </li>
+        <li>Design Systems</li>
+      </ul>
+    </div>
+    <div class="vr"></div>
+    <div>
+      <h3>Back</h3>
+      <ul class="inline-list">
+        <li>
+          <a href="https://ruby-lang.org/">
+            <img src="https://ruby-lang.org/favicon.ico" alt="" />
+            Ruby
+          </a>
+        </li>
+        <li>
+          <a href="https://rubyonrails.org/">
+            <img
+              src="https://rubyonrails.org/assets/images/favicon.png"
+              alt=""
+            />
+            Rails
+          </a>
+        </li>
+        <li>
+          <a href="https://nodejs.org/en">
+            <img src="https://nodejs.org/favicon.ico" alt="" />
+            Node
+          </a>
+        </li>
+        <li>
+          <a href="https://www.postgresql.org/">
+            <img src="https://www.postgresql.org/favicon.ico" alt="" />
+            Postgres
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/redis/redis">
+            <img
+              src="https://avatars.githubusercontent.com/u/1529926?s=200&v=4"
+              alt=""
+            />
+            Redis
+          </a>
+        </li>
+        <li>
+          <a href="https://grpc.io/">
+            <img src="https://grpc.io/favicons/favicon-32x32.png" alt="" />
+            gRPC
+          </a>
+        </li>
+        <li>
+          <a href="https://kubernetes.io/">
+            <img src="https://kubernetes.io/icons/favicon-32.png" alt="" />
+            Kubernetes
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Past Work</h2>
+    <ul>
+      <li class="past-project">
+        <div class="title-client-period">
+          <div class="title-client">
+            <h3>Consulting</h3>
+            <p class="client">
+              <img
+                src="https://static.wixstatic.com/media/825621_d223eeb8aa224357acbc2ddc128ee91b%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/825621_d223eeb8aa224357acbc2ddc128ee91b%7Emv2.png"
+                alt=""
+              />
+              <a href="https://www.asaak.com/">Asaak</a>,
+              <img
+                src="https://static.wixstatic.com/media/36f5df_8eb2357f2ca1441dac2e91b57449f3f0%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/36f5df_8eb2357f2ca1441dac2e91b57449f3f0%7Emv2.png"
+                alt=""
+              />
+              <a href="https://www.charahealth.com/">Chara Health</a>, Arroway
+            </p>
+          </div>
+          <p class="period">2021 - now</p>
         </div>
+        <p class="tools">
+          <span class="label">tools used:</span> Python, Django, Rails, Svelte,
+          LitElement
+        </p>
+        <ul class="points-list with-bullets">
+          <li>
+            Part time contracting work as I invest myself in personal life
+            projects
+          </li>
+          <li>Built a front-end to a product recommendation engine</li>
+          <li>App developement of an online health booking service</li>
+          <li>Feature develoment for a lending platform</li>
+        </ul>
+      </li>
+      <% for experience in experience_list %> <%= render '/experience.*' ,
+      experience %> <% end %>
+      <li class="past-project">
+        <div class="title-client-period">
+          <div class="title-client">
+            <h3>Consulting</h3>
+            <p class="client">Modenature, Lycee Bachas, Qualinetwork, ...</p>
+          </div>
+          <p class="period">pre 2011</p>
+        </div>
+        <p class="tools">
+          <span class="label">tools used:</span> Ruby, Rails, Adobe Flex, CSS,
+          PHP
+        </p>
+        <ul class="points-list with-bullets">
+          <li>Developped a successful sales management app</li>
+          <li>Developped an architectural document file sharing platform</li>
+          <li>long tail of early HTML/JS/CSS work</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</article>
 
-        <article>
-          <section id="profile">
-            <h2>Profile</h2>
-            <ul class="with-bullets">
-              <li><em>15+ years</em> of experience working with web systems.</li>
-              <li><em>8 years</em> working for <em>startups in San Francisco</em>.</li>
-              <li>
-                <em>7 years</em> of independent <em>consulting in France</em>, early career.
-              </li>
-              <li>Passionate about <em>user experience</em>, detail oriented.</li>
-              <li>Experienced with all layers in the stack.</li>
-              <li>Currently based in <em>western Canada, PST</em>.</li>
-            </ul>
-            <p>&rarr; Looking for senior positions in either back end or front end, or both</p>
-          </section>
-
-          <section id="skills">
-            <div>
-              <h3>Front</h3>
-              <ul class="inline-list">
-                <li>
-                  <a href="https://www.typescriptlang.org/">
-                    <img src="https://www.typescriptlang.org/favicon.ico" alt="" />
-                    Typescript
-                  </a>
-                </li>
-                <li>
-                  <a href="https://react.dev/" target="blank">
-                    <img src="https://react.dev/favicon.ico" alt="" />React
-                  </a>
-                </li>
-                <li>
-                  <a href="https://svelte.dev/" target="blank">
-                    <img src="https://svelte.dev/favicon.png" alt="" />
-                    Svelte
-                  </a>
-                </li>
-                <li>
-                  <a href="https://playwright.dev/" target="blank">
-                    <img src="https://playwright.dev/img/playwright-logo.svg" alt="" />
-                    Playwright
-                  </a>
-                </li>
-                <li>
-                  <a href="https://storybook.js.org/" target="blank">
-                    <img src="https://storybook.js.org/icon.svg" alt="" />
-                    Storybook
-                  </a>
-                </li>
-                <li>
-                  <a href="https://tailwindcss.com/" target="blank">
-                    <img src="https://tailwindcss.com/favicon.ico" alt="" />
-                    Tailwind
-                  </a>
-                </li>
-                <li>Design Systems</li>
-              </ul>
-            </div>
-            <div class="vr"></div>
-            <div>
-              <h3>Back</h3>
-              <ul class="inline-list">
-                <li>
-                  <a href="https://ruby-lang.org/">
-                    <img src="https://ruby-lang.org/favicon.ico" alt="" />
-                    Ruby
-                  </a>
-                </li>
-                <li>
-                  <a href="https://rubyonrails.org/">
-                    <img src="https://rubyonrails.org/assets/images/favicon.png" alt="" />
-                    Rails
-                  </a>
-                </li>
-                <li>
-                  <a href="https://nodejs.org/en">
-                    <img src="https://nodejs.org/favicon.ico" alt="" />
-                    Node
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.postgresql.org/">
-                    <img src="https://www.postgresql.org/favicon.ico" alt="" />
-                    Postgres
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/redis/redis">
-                    <img src="https://avatars.githubusercontent.com/u/1529926?s=200&v=4" alt="" />
-                    Redis
-                  </a>
-                </li>
-                <li>
-                  <a href="https://grpc.io/">
-                    <img src="https://grpc.io/favicons/favicon-32x32.png" alt="" />
-                    gRPC
-                  </a>
-                </li>
-                <li>
-                  <a href="https://kubernetes.io/">
-                    <img src="https://kubernetes.io/icons/favicon-32.png" alt="" />
-                    Kubernetes
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </section>
-
-          <section id="projects">
-            <h2>Past Work</h2>
-            <ul>
-              <li class="past-project">
-                <div class="title-client-period">
-                  <div class="title-client">
-                    <h3>Consulting</h3>
-                    <p class="client">
-                      <img
-                        src="https://static.wixstatic.com/media/825621_d223eeb8aa224357acbc2ddc128ee91b%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/825621_d223eeb8aa224357acbc2ddc128ee91b%7Emv2.png"
-                        alt="" />
-                      <a href="https://www.asaak.com/">Asaak</a>,
-                      <img
-                        src="https://static.wixstatic.com/media/36f5df_8eb2357f2ca1441dac2e91b57449f3f0%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/36f5df_8eb2357f2ca1441dac2e91b57449f3f0%7Emv2.png"
-                        alt="" />
-                      <a href="https://www.charahealth.com/">Chara Health</a>, Arroway
-                    </p>
-                  </div>
-                  <p class="period">2021 - now</p>
-                </div>
-                <p class="tools">
-                  <span class="label">tools used:</span> Python, Django, Rails, Svelte,
-                  LitElement
-                </p>
-                <ul class="points-list with-bullets">
-                  <li>
-                    Part time contracting work as I invest myself in personal life
-                    projects
-                  </li>
-                </ul>
-              </li>
-              <% for experience in experience_list %>
-                <%= render '/experience.*' , experience %>
-                  <% end %>
-            </ul>
-          </section>
-        </article>
-
-        <% content_for :footer do %>
-          <footer>
-            <p>
-              <a href="https://github.com/ximus/maximeliron.com" target="blank">Source on Github</a>
-              | <a href="/maxime-liron-resume.pdf">Download this as a PDF</a> |
-              <a href="/resume-old/">Previous version</a>
-            </p>
-            <p>
-              built using: <a href="http://sass-lang.com/" target="blank">Sass</a>,
-              <a href="http://jashkenas.github.com/coffee-script/" target="blank">CoffeeScript</a>
-              and <a href="http://nanoc.ws/" target="blank">Nanoc</a>.
-            </p>
-            <p>last modified: <%= Time.now.strftime("%m/%d/%Y") %>
-            </p>
-          </footer>
-          <script src="../javascripts/main.js" defer></script>
-          <% end %>
+<% content_for :footer do %>
+<footer>
+  <p>
+    <a href="https://github.com/ximus/maximeliron.com" target="blank"
+      >Source on Github</a
+    >
+    | <a href="/maxime-liron-resume.pdf">Download this as a PDF</a> |
+    <a href="/resume-old/">Previous version</a>
+  </p>
+  <p>
+    built using: <a href="http://sass-lang.com/" target="blank">Sass</a>,
+    <a href="http://jashkenas.github.com/coffee-script/" target="blank"
+      >CoffeeScript</a
+    >
+    and <a href="http://nanoc.ws/" target="blank">Nanoc</a>.
+  </p>
+  <p>last modified: <%= Time.now.strftime("%m/%d/%Y") %></p>
+</footer>
+<script src="../javascripts/main.js" defer></script>
+<% end %>

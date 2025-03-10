@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
+rm -rf output/
 bundle exec nanoc compile
 bundle exec rake compile:pdf_resume
